@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightClasses", "FlightClas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight Testing", "Flight Testing\Flight Testing.csproj", "{FFB6EDFE-1FAB-4DC1-8BFF-B40B2181D2E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightTesting", "FlightTesting\FlightTesting.csproj", "{574E6709-4E00-4502-BA0B-EA76FD5EEF58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{FFB6EDFE-1FAB-4DC1-8BFF-B40B2181D2E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFB6EDFE-1FAB-4DC1-8BFF-B40B2181D2E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFB6EDFE-1FAB-4DC1-8BFF-B40B2181D2E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{574E6709-4E00-4502-BA0B-EA76FD5EEF58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{574E6709-4E00-4502-BA0B-EA76FD5EEF58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{574E6709-4E00-4502-BA0B-EA76FD5EEF58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{574E6709-4E00-4502-BA0B-EA76FD5EEF58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
