@@ -12,6 +12,8 @@ namespace FlightTesting
         {
             //create an instance of a class
             clsCustomer ACustomer = new clsCustomer();
+            //test to see that it exists
+            Assert.IsNotNull(ACustomer);
         }
         [TestMethod]
         //used to test the CustomerID property of the class
@@ -19,11 +21,9 @@ namespace FlightTesting
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
-            //create a variable to store the ID of a customer
-            Int32 CustomerID;
-            //assign a value to the variable
-            CustomerID = 1;
-            //try to send some data to the CustomerID property
+            //create some test data to assign to proprty
+            Int32 CustomerID = 1;
+            //assign data to property
             ACustomer.CustomerID = CustomerID;
             //check to see the data in the variable and the property are the same
             Assert.AreEqual(ACustomer.CustomerID, CustomerID);
@@ -34,11 +34,9 @@ namespace FlightTesting
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
-            //create a variable to store the name of the person
-            string SomeName;
-            //assign a name to the variable
-            SomeName = "Tommy";
-            //try to send some data to the name property
+            //create some test data to assign to proprty
+            string SomeName = "Tommy";
+            //assign data to property
             ACustomer.Name = SomeName;
             //check to see the data in the variable and the property are the same
             Assert.AreEqual(ACustomer.Name, SomeName);
@@ -49,11 +47,9 @@ namespace FlightTesting
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
-            //create a variable to store the phone of a person
-            Int32 Phone;
-            //assign a value to the variable
-            Phone = 0734642344;
-            //try to send some data to the phone property
+            //create some test data to assign to proprty
+            Int32 Phone = 0734642344;
+            //assign data to property
             ACustomer.Phone = Phone;
             //check to see the data in the variable and the property are the same
             Assert.AreEqual(ACustomer.Phone, Phone);
@@ -64,11 +60,9 @@ namespace FlightTesting
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
-            //create a variable to store the email of the person
-            string SomeEmail;
-            //assign a email to the variable
-            SomeEmail = "OverAchievers@outlook.com";
-            //try to send some data to the email property
+            //create some test data to assign to proprty
+            string SomeEmail = "OverAchievers@outlook.com";
+            //assign data to property
             ACustomer.Email = SomeEmail;
             //check to see the data in the variable and the property are the same
             Assert.AreEqual(ACustomer.Email, SomeEmail);
@@ -79,11 +73,9 @@ namespace FlightTesting
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
-            //create a variable to store the username of the person
-            string SomeUserName;
-            //assign a username to the variable
-            SomeUserName = "Tommy123";
-            //try to send some data to the username property
+            //create some test data to assign to proprty
+            string SomeUserName = "Tommy123";
+            //assign data to property
             ACustomer.UserName = SomeUserName;
             //check to see the data in the variable and the property are the same
             Assert.AreEqual(ACustomer.UserName, SomeUserName);
@@ -94,11 +86,9 @@ namespace FlightTesting
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
-            //create a variable to store the name of the person
-            string SomePassword;
-            //assign a name to the variable
-            SomePassword = "12133hrf43r";
-            //try to send some data to the name property
+            //create some test data to assign to proprty
+            string SomePassword = "12133hrf43r";
+            //assign data to property
             ACustomer.Password = SomePassword;
             //check to see the data in the variable and the property are the same
             Assert.AreEqual(ACustomer.Password, SomePassword);
@@ -109,11 +99,9 @@ namespace FlightTesting
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
-            //create a variable to store the PaymentID of the person
-            string SomePaymentID;
-            //assign a PaymentID to the variable
-            SomePaymentID = "123asd";
-            //try to send some data to the PaymentID property
+            //create some test data to assign to proprty
+            string SomePaymentID = "123asd";
+            //assign data to property
             ACustomer.PaymentID = SomePaymentID;
             //check to see the data in the variable and the property are the same
             Assert.AreEqual(ACustomer.PaymentID, SomePaymentID);
@@ -124,11 +112,9 @@ namespace FlightTesting
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
-            //create a variable to store the PaymentType of the person
-            string SomePaymentType;
-            //assign a PaymentID to the variable
-            SomePaymentType = "Debit Card";
-            //try to send some data to the PaymentType property
+            //create some test data to assign to proprty
+            string SomePaymentType = "Debit Card";
+            //assign data to property
             ACustomer.PaymentType = SomePaymentType;
             //check to see the data in the variable and the property are the same
             Assert.AreEqual(ACustomer.PaymentType, SomePaymentType);
@@ -139,8 +125,13 @@ namespace FlightTesting
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
-            //test to see if the valid method exists
-            ACustomer.Valid("Abraham");
+            //create a string variable to store the result of the validaation
+            string Error = "";
+            //create some test data to test the method
+            string SomeCustomer = "Abraham";
+            Error = ACustomer.Valid(SomeCustomer);
+            //test to see the result is ok. i.e there was no error mssage returned
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         //test that the customer validation throws an error when customer is blank
@@ -280,6 +271,147 @@ namespace FlightTesting
             Email = Email.PadRight(50, 'a');
             //invoke the method
             Error = ACustomer.Valid(Email);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void UserNameMinLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "asd1";
+            //create some test data to test the method
+            string UserName = "";
+            //invoke the method
+            Error = ACustomer.Valid(UserName);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void UserNameMaxPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string UserName = "Adammicheal12345";
+            //invoke the method
+            Error = ACustomer.Valid(UserName);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void UserNameExtremeMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string UserName = "";
+            //pad the string with characters
+            UserName = UserName.PadRight(40, 'a');
+            //invoke the method
+            Error = ACustomer.Valid(UserName);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void PasswordMinLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string Password = "";
+            //invoke the method
+            Error = ACustomer.Valid(Password);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void PasswordMaxPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string Password = "Adammichealqazxfvghc.";
+            //invoke the method
+            Error = ACustomer.Valid(Password);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void PasswordExtremeMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string Password = "";
+            //pad the string with characters
+            Password = Password.PadRight(50, 'a');
+            //invoke the method
+            Error = ACustomer.Valid(Password);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void PaymentIDMinLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string PaymentID = "";
+            //invoke the method
+            Error = ACustomer.Valid(PaymentID);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void PaymentIDMaxPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string PaymentID = "Adamd3dg5g";
+            //invoke the method
+            Error = ACustomer.Valid(PaymentID);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void PaymentIDExtremeMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string PaymentID = "";
+            //pad the string with characters
+            PaymentID = PaymentID.PadRight(25, 'a');
+            //invoke the method
+            Error = ACustomer.Valid(PaymentID);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }

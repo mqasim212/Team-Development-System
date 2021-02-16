@@ -28,6 +28,7 @@ namespace FlightClasses
                 //return an error message
                 Error = "The customer name may not be blank";
             }
+
             return Error;
         }
     }
