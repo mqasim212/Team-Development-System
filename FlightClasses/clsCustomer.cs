@@ -13,17 +13,17 @@ namespace FlightClasses
         public string PaymentID { get; set; }
         public string PaymentType { get; set; }
 
-        public string Valid(string Customer)
+        public string Valid(string Name)
         {
             //string variable to store the error message
             string Error = "";
             //if the name of the customer is more than 20 characters
-            if (Customer.Length > 20)
+            if (Name.Length > 20)
             {
                 //return an error message
                 Error = "The customer name cannot have more than 20 characters";
             }
-            if (Customer.Length == 0)
+            if (Name.Length == 0)
             {
                 //return an error message
                 Error = "The customer name may not be blank";

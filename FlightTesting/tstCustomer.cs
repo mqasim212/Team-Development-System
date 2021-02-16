@@ -144,33 +144,144 @@ namespace FlightTesting
         }
         [TestMethod]
         //test that the customer validation throws an error when customer is blank
-        public void CustomerMinLessOne()
+        public void NameMinLessOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //create a string variable to store the result of the validation
             string Error = "";
             //create some test data to test the method
-            string Customer = "";
+            string Name = "";
             //invoke the method
-            Error = ACustomer.Valid(Customer);
+            Error = ACustomer.Valid(Name);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         //test that the customer validation throws an error when customer is blank
-        public void CustomerMaxPlusOne()
+        public void NameMaxPlusOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //create a string variable to store the result of the validation
             string Error = "";
             //create some test data to test the method
-            string Customer = "abcdefghijklmnopqrst";
+            string Name = "adammichealjonathanmb";
             //invoke the method
-            Error = ACustomer.Valid(Customer);
+            Error = ACustomer.Valid(Name);
             //Test to see that the result is not ok. i.e there should be an error message
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void NameExtremeMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string Name = "";
+            //pad the string with characters
+            Name = Name.PadRight(50, 'a');
+            //invoke the method
+            Error = ACustomer.Valid(Name);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void PhoneMinLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string Phone = "";
+            //invoke the method
+            Error = ACustomer.Valid(Phone);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void PhoneMaxPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string Phone = "67890776787978883";
+            //invoke the method
+            Error = ACustomer.Valid(Phone);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void PhoneExtremeMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string Phone = "";
+            //pad the string with characters
+            Phone = Phone.PadRight(30, 'a');
+            //invoke the method
+            Error = ACustomer.Valid(Phone);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+         [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void EmailMinLessOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string Email = "";
+            //invoke the method
+            Error = ACustomer.Valid(Email);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void EmailMaxPlusOne()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string Email = "Adammichealjonathanmb@gmail.com";
+            //invoke the method
+            Error = ACustomer.Valid(Email);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void EmailExtremeMax()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string Email = "";
+            //pad the string with characters
+            Email = Email.PadRight(50, 'a');
+            //invoke the method
+            Error = ACustomer.Valid(Email);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
         }
     }
 }
