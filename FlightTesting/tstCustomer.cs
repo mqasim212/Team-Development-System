@@ -283,6 +283,5 @@ namespace FlightTesting
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
-
     }
 }
