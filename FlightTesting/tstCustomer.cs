@@ -18,26 +18,14 @@ namespace FlightTesting
         string SomePaymentType = "Debit Card";
 
         [TestMethod]
-        public void InstantiationOk()
+        public void InstanceOK()
         {
             //create an instance of a class
             clsCustomer ACustomer = new clsCustomer();
             //test to see that it exists
             Assert.IsNotNull(ACustomer);
         }
-        [TestMethod]
-        //used to test the CustomerID property of the class
-        public void CustomerID()
-        {
-            //create an instance of the class
-            clsCustomer ACustomer = new clsCustomer();
-            //create some test data to assign to proprty
-            Int32 CustomerID = 1;
-            //assign data to property
-            ACustomer.CustomerID = CustomerID;
-            //check to see the data in the variable and the property are the same
-            Assert.AreEqual(ACustomer.CustomerID, CustomerID);
-        }
+
         [TestMethod]
         //used to test the name property of the class
         public void Name()
