@@ -41,7 +41,7 @@ namespace FlightTesting
             //assign the data to the property
             AllCustomers.CustomerList = TestList;
             //test to see that the two values are the same
-            Assert.AreEqual(AllCustomers.CustomerList, TestItem);
+            Assert.AreEqual(AllCustomers.CustomerList, TestList);
         }
         [TestMethod]
         public void CountProperty()
@@ -49,7 +49,7 @@ namespace FlightTesting
             //create an instance of the class
             clsCustomerCollection AllCustomers = new clsCustomerCollection();
             //create some test data to assign to the property
-            Int32 SomeCount = 0;
+            Int32 SomeCount = 2;
             //assign the data to the property
             AllCustomers.Count = SomeCount;
             //Test to see the two values are the same
@@ -101,6 +101,14 @@ namespace FlightTesting
             //test to see that the two values are the same
             Assert.AreEqual(AllCustomers.Count, TestList.Count);
         }
+        [TestMethod]
+        public void TwoRecordsPresent()
+        {
+            // create an instance of the class
+            clsCustomerCollection AllCustomers = new clsCustomerCollection();
+            //test to see the two values are the same
+            Assert.AreEqual(AllCustomers.Count, 2);
 
+        }
     }
 }
