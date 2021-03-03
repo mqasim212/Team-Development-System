@@ -98,5 +98,10 @@ namespace FlightClasses
 
             return Error;
         }
+
+        public Boolean Find(int primaryKey)
+        {
+            return false;
+        }
     }
 }
