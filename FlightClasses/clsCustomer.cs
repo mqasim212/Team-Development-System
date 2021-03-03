@@ -4,6 +4,7 @@ namespace FlightClasses
 {
     public class clsCustomer
     {
+        public int CustomerID { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
@@ -11,7 +12,6 @@ namespace FlightClasses
         public string Password { get; set; }
         public string PaymentID { get; set; }
         public string PaymentType { get; set; }
-
         
 
         public string Valid(string someName, string somePhone, string someEmail, string someUserName, string somePassword, string somePaymentID, string somePaymentType)

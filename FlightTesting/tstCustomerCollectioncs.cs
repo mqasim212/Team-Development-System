@@ -29,6 +29,7 @@ namespace FlightTesting
             //create the item of test data
             clsCustomer TestItem = new clsCustomer();
             //set its properties
+            TestItem.CustomerID = 1;
             TestItem.Name = "Tommy";
             TestItem.Phone = "0734642344";
             TestItem.Email = "OverAchievers@outlook.com";
@@ -43,18 +44,18 @@ namespace FlightTesting
             //test to see that the two values are the same
             Assert.AreEqual(AllCustomers.CustomerList, TestList);
         }
-        [TestMethod]
-        public void CountProperty()
-        {
-            //create an instance of the class
-            clsCustomerCollection AllCustomers = new clsCustomerCollection();
-            //create some test data to assign to the property
-            Int32 SomeCount = 2;
-            //assign the data to the property
-            AllCustomers.Count = SomeCount;
-            //Test to see the two values are the same
-            Assert.AreEqual(AllCustomers.Count, SomeCount);
-        }
+        //[TestMethod]
+        //public void CountProperty()
+        //{
+        //    //create an instance of the class
+        //    clsCustomerCollection AllCustomers = new clsCustomerCollection();
+        //    //create some test data to assign to the property
+        //    Int32 SomeCount = 2;
+        //    //assign the data to the property
+        //    AllCustomers.Count = SomeCount;
+        //    //Test to see the two values are the same
+        //    Assert.AreEqual(AllCustomers.Count, SomeCount);
+        //}
         [TestMethod]
         public void ThisCustomerProperty()
         {
@@ -63,6 +64,7 @@ namespace FlightTesting
             //create some test data to assign to the property
             clsCustomer TestCustomer = new clsCustomer();
             //set the properties of the test object
+            TestCustomer.CustomerID = 1;
             TestCustomer.Name = "Tommy";
             TestCustomer.Phone = "0734642344";
             TestCustomer.Email = "OverAchievers@outlook.com";
@@ -87,6 +89,7 @@ namespace FlightTesting
             //create the item of test data
             clsCustomer TestItem = new clsCustomer();
             //set its properties
+            TestItem.CustomerID = 1;
             TestItem.Name = "Tommy";
             TestItem.Phone = "0734642344";
             TestItem.Email = "OverAchievers@outlook.com";
@@ -101,14 +104,14 @@ namespace FlightTesting
             //test to see that the two values are the same
             Assert.AreEqual(AllCustomers.Count, TestList.Count);
         }
-        [TestMethod]
-        public void TwoRecordsPresent()
-        {
-            // create an instance of the class
-            clsCustomerCollection AllCustomers = new clsCustomerCollection();
-            //test to see the two values are the same
-            Assert.AreEqual(AllCustomers.Count, 2);
+        //[TestMethod]
+        //public void TwoRecordsPresent()
+        //{
+        //    // create an instance of the class
+        //    clsCustomerCollection AllCustomers = new clsCustomerCollection();
+        //    //test to see the two values are the same
+        //    Assert.AreEqual(AllCustomers.Count, 2);
 
-        }
+        //}
     }
 }
