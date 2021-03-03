@@ -30,4 +30,36 @@ public partial class CustomerList : System.Web.UI.Page
         //bind the data to the list
         lstCustomers.DataBind();
     }
+
+    //event handler for the add button
+    protected void btnAdd_Click(object sender, EventArgs e)
+    {
+        //store -1 into the session object to indicate this is a new record
+        Session["CustomerID"] = -1;
+        //redirect to the data entry page
+        Response.Redirect("ACustomer.aspx");
+    }
+
+    //event handler for the dele
+    protected void btnDelete_Click(object sender, EventArgs e)
+    {
+        //var to store the pariamry key value of the record to be deleted
+        Int32 CustomerID;
+        //if a record has been selected from the list
+        if (lstCustomers.SelectedIndex != -1)
+        {
+            //get the primary key value of the record to delete
+            CustomerID = Convert.ToInt32(lstCustomers.SelectedValue);
+            //store the data in the session object
+            Session["CustomerID"] = CustomerID;
+            //redirect to the delete page
+            Response.Redirect("CustomerDelete.aspx");
+        }
+        //if no record has been selected
+        else
+        {
+            //display an error
+            lblError.Text= "Please select a record to delete from the list";
+        }
+    }
 }

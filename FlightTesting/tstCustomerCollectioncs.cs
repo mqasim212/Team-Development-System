@@ -44,18 +44,7 @@ namespace FlightTesting
             //test to see that the two values are the same
             Assert.AreEqual(AllCustomers.CustomerList, TestList);
         }
-        //[TestMethod]
-        //public void CountProperty()
-        //{
-        //    //create an instance of the class
-        //    clsCustomerCollection AllCustomers = new clsCustomerCollection();
-        //    //create some test data to assign to the property
-        //    Int32 SomeCount = 2;
-        //    //assign the data to the property
-        //    AllCustomers.Count = SomeCount;
-        //    //Test to see the two values are the same
-        //    Assert.AreEqual(AllCustomers.Count, SomeCount);
-        //}
+
         [TestMethod]
         public void ThisCustomerProperty()
         {
@@ -104,14 +93,68 @@ namespace FlightTesting
             //test to see that the two values are the same
             Assert.AreEqual(AllCustomers.Count, TestList.Count);
         }
-        //[TestMethod]
-        //public void TwoRecordsPresent()
-        //{
-        //    // create an instance of the class
-        //    clsCustomerCollection AllCustomers = new clsCustomerCollection();
-        //    //test to see the two values are the same
-        //    Assert.AreEqual(AllCustomers.Count, 2);
 
-        //}
+        [TestMethod]
+        public void AddMethod()
+        {
+            //create and instance of the class
+            clsCustomerCollection AllCustomers = new clsCustomerCollection();
+            //create the item of test data
+            clsCustomer TestItem = new clsCustomer();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.CustomerID = 1;
+            TestItem.Name = "Tommy";
+            TestItem.Phone = "0734642344";
+            TestItem.Email = "OverAchievers@outlook.com";
+            TestItem.UserName = "Tommy123";
+            TestItem.Password = "12133hrf43r";
+            TestItem.PaymentID = "123asd";
+            TestItem.PaymentType = "Debit Card";
+            //set ThisCustomer to the test data
+            AllCustomers.ThisCustomer = TestItem;
+            //add the record
+            PrimaryKey = AllCustomers.Add();
+            //set the primary key of the test data
+            TestItem.CustomerID = PrimaryKey;
+            //find the record
+            AllCustomers.ThisCustomer.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.AreEqual(AllCustomers.ThisCustomer, TestItem);
+        }
+        [TestMethod]
+        public void DeleteMethod()
+        {
+            //create and instance of the class
+            clsCustomerCollection AllCustomers = new clsCustomerCollection();
+            //create the item of test data
+            clsCustomer TestItem = new clsCustomer();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.CustomerID = 1;
+            TestItem.Name = "Tommy";
+            TestItem.Phone = "0734642344";
+            TestItem.Email = "OverAchievers@outlook.com";
+            TestItem.UserName = "Tommy123";
+            TestItem.Password = "12133hrf43r";
+            TestItem.PaymentID = "123asd";
+            TestItem.PaymentType = "Debit Card";
+            //set ThisCustomer to the test data
+            AllCustomers.ThisCustomer = TestItem;
+            //add the record
+            PrimaryKey = AllCustomers.Add();
+            //set the primary key of the test data
+            TestItem.CustomerID = PrimaryKey;
+            //find the record
+            AllCustomers.ThisCustomer.Find(PrimaryKey);
+            //delete the record
+            AllCustomers.Delete();
+            //now find the record
+            Boolean Found = AllCustomers.ThisCustomer.Find(PrimaryKey);
+            //test to see that the record was not found
+            Assert.IsFalse(Found);
+        }
     }
 }

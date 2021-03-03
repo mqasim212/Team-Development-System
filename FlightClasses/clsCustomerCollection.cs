@@ -7,8 +7,23 @@ namespace FlightClasses
     {
         //private data member for the list
         List<clsCustomer> mCustomerList = new List<clsCustomer>();
+        //private data member thisCustomer
+        clsCustomer mThisCustomer = new clsCustomer();
 
-        public clsCustomer ThisCustomer { get; set; }
+        //public property for ThisCustomer
+        public clsCustomer ThisCustomer
+        {
+            get
+            {
+                //return the private data
+                return mThisCustomer;
+            }
+            set
+            {
+                //set the private data
+                mThisCustomer = value;
+            }
+        }
 
         //constructor for the class
 
@@ -76,8 +91,34 @@ namespace FlightClasses
             }
 
         }
+
+        public int Add()
+        {
+            //adds a new record to the database based on the values of thiscustomer
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored poceedure
+            DB.AddParameter("@Name", mThisCustomer.Name);
+            DB.AddParameter("@Phone", mThisCustomer.Phone);
+            DB.AddParameter("@Email", mThisCustomer.Email);
+            DB.AddParameter("@UserName", mThisCustomer.UserName);
+            DB.AddParameter("@Password", mThisCustomer.Password);
+            DB.AddParameter("@PaymentID", mThisCustomer.PaymentID);
+            DB.AddParameter("@PaymentType", mThisCustomer.PaymentType);
+            //execute the query returning the primary key value
+            return DB.Execute("sproc_tblCustomer_Insert");
+
+        }
+
+        public void Delete()
+        {
+            //deletes the record pointed to by ThisCustomer
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored proceedure
+            DB.AddParameter("CustomerID", mThisCustomer.CustomerID);
+            //execute the stored proceedure
+            DB.Execute("sproc_tblCustomer_Delete");
+        }
     }
 }
-
-        
-   

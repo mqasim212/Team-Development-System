@@ -25,8 +25,8 @@
         <asp:Label ID="lblPaymentType" runat="server" style="z-index: 1; left: 20px; top: 312px; position: absolute; height: 25px; width: 126px; right: 1367px;" Text="Payment Type"></asp:Label>
         <asp:TextBox ID="txtPaymentID" runat="server" style="z-index: 1; left: 132px; top: 267px; position: absolute"></asp:TextBox>
         <asp:TextBox ID="txtPaymentType" runat="server" style="z-index: 1; left: 146px; top: 313px; position: absolute"></asp:TextBox>
-        <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 21px; top: 422px; position: absolute; width: 55px; height: 36px; right: 1437px" Text="OK" OnClick="btnOK_Click" />
-        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 105px; top: 423px; position: absolute; width: 88px; height: 36px" Text="Cancel" />
+        <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 21px; top: 422px; position: absolute; width: 55px; height: 36px; right: 772px" Text="OK" OnClick="btnOK_Click" />
+        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 105px; top: 423px; position: absolute; width: 88px; height: 36px" Text="Cancel" OnClick="btnCancel_Click" />
     </form>
 </body>
 </html>
