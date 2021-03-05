@@ -12,7 +12,7 @@ namespace FlightTesting
         string SomeName = "Abraham";
         string SomePhone = "04855434542";
         string SomeEmail = "OverAchievers@outlook.com";
-        string SomeUserName = "Tommy123";
+        string SomeUsername = "Tommy123";
         string SomePassword = "12133hrf43r";
         string SomePaymentID = "123asd";
         string SomePaymentType = "Debit Card";
@@ -84,11 +84,11 @@ namespace FlightTesting
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //create some test data to assign to proprty
-            string SomeUserName = "Tommy123";
+            string SomeUsername = "Tommy123";
             //assign data to property
-            ACustomer.UserName = SomeUserName;
+            ACustomer.Username = SomeUsername;
             //check to see the data in the variable and the property are the same
-            Assert.AreEqual(ACustomer.UserName, SomeUserName);
+            Assert.AreEqual(ACustomer.Username, SomeUsername);
         }
         [TestMethod]
         //used to test the Password property of the class
@@ -138,7 +138,7 @@ namespace FlightTesting
             //create a string variable to store the result of the validaation
             string Error = "";
             //create some test data to test the method
-            Error = ACustomer.Valid(SomeName,SomePhone,SomeEmail,SomeUserName,SomePassword,SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName,SomePhone,SomeEmail,SomeUsername,SomePassword,SomePaymentID, SomePaymentType);
             //test to see the result is ok. i.e there was no error mssage returned
             Assert.AreEqual(Error, "");
         }
@@ -153,7 +153,7 @@ namespace FlightTesting
             //create some test data to test the method
             string SomeName = "";
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -168,7 +168,7 @@ namespace FlightTesting
             //create some test data to test the method
             string SomeName = "adammichealjonathanmb";
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -185,7 +185,7 @@ namespace FlightTesting
             //pad the string with characters
             SomeName = SomeName.PadRight(50, 'a');
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -200,7 +200,7 @@ namespace FlightTesting
             //create some test data to test the method
             string SomePhone = "";
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -215,7 +215,7 @@ namespace FlightTesting
             //create some test data to test the method
             string SomePhone = "474857374580";
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -232,7 +232,7 @@ namespace FlightTesting
             //pad the string with characters
             SomePhone = SomePhone.PadRight(30, 'a');
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -247,7 +247,7 @@ namespace FlightTesting
             //create some test data to test the method
             string SomeEmail = "a@r";
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -262,7 +262,7 @@ namespace FlightTesting
             //create some test data to test the method
             string SomeEmail = "Adammichealjonathanmb@gmail.com";
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -279,54 +279,54 @@ namespace FlightTesting
             //pad the string with characters
             SomeEmail = SomeEmail.PadRight(50, 'a');
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         //test that the customer validation throws an error when customer is blank
-        public void UserNameMinLessOne()
+        public void UsernameMinLessOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //create a string variable to store the result of the validation
             string Error = "asd1";
             //create some test data to test the method
-            string SomeUserName = "df34";
+            string SomeUsername = "df34";
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         //test that the customer validation throws an error when customer is blank
-        public void UserNameMaxPlusOne()
+        public void UsernameMaxPlusOne()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //create a string variable to store the result of the validation
             string Error = "";
             //create some test data to test the method
-            string SomeUserName = "Adammicheal12345";
+            string SomeUsername = "Adammicheal12345";
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
         //test that the customer validation throws an error when customer is blank
-        public void UserNameExtremeMax()
+        public void UsernameExtremeMax()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
             //create a string variable to store the result of the validation
             string Error = "";
             //create some test data to test the method
-            string SomeUserName = "";
+            string SomeUsername = "";
             //pad the string with characters
-            SomeUserName = SomeUserName.PadRight(40, 'a');
+            SomeUsername = SomeUsername.PadRight(40, 'a');
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -341,7 +341,7 @@ namespace FlightTesting
             //create some test data to test the method
             string SomePassword = "12345";
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -356,7 +356,7 @@ namespace FlightTesting
             //create some test data to test the method
             string SomePassword = "Adammichealqazxfvghca";
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -373,7 +373,7 @@ namespace FlightTesting
             //pad the string with characters
             SomePassword = SomePassword.PadRight(50, 'a');
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -388,7 +388,7 @@ namespace FlightTesting
             //create some test data to test the method
             string SomePaymentID = "";
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -403,7 +403,7 @@ namespace FlightTesting
             //create some test data to test the method
             string SomePaymentID = "Adamd3dg5g";
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -420,7 +420,7 @@ namespace FlightTesting
             //pad the string with characters
             SomePaymentID = SomePaymentID.PadRight(25, 'a');
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -435,7 +435,7 @@ namespace FlightTesting
             //create some test data to test the method
             string SomePaymentType = "credit ca";
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -450,7 +450,7 @@ namespace FlightTesting
             //create some test data to test the method
             string SomePaymentType = "Debit transactio";
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
@@ -467,7 +467,7 @@ namespace FlightTesting
             //pad the string with characters
             SomePaymentType = SomePaymentType.PadRight(40, 'a');
             //invoke the method
-            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUserName, SomePassword, SomePaymentID, SomePaymentType);
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }

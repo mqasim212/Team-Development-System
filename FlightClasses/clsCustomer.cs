@@ -8,13 +8,13 @@ namespace FlightClasses
         public string Name { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public string UserName { get; set; }
+        public string Username { get; set; }
         public string Password { get; set; }
         public string PaymentID { get; set; }
         public string PaymentType { get; set; }
         
 
-        public string Valid(string someName, string somePhone, string someEmail, string someUserName, string somePassword, string somePaymentID, string somePaymentType)
+        public string Valid(string someName, string somePhone, string someEmail, string someUsername, string somePassword, string somePaymentID, string somePaymentType)
         {
             //string variable to store the error message
             string Error = "";
@@ -52,12 +52,12 @@ namespace FlightClasses
                 Error = Error + "The Email may not be blank";
             }
             //if the username is more than 15 characters
-            if (someUserName.Length > 15)
+            if (someUsername.Length > 15)
             {
                 //return an error message
                 Error = Error + "The UserName cannot have more than 15 characters";
             }
-            if (someUserName.Length == 4)
+            if (someUsername.Length == 4)
             {
                 //return an error message
                 Error = Error + "The UserName may not be blank";
