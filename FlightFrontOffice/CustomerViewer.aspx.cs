@@ -21,7 +21,7 @@ public partial class CustomerViewer : System.Web.UI.Page
         //display the email for this entry
         Response.Write(ACustomer.Email);
         //display the UserName for this entry
-        Response.Write(ACustomer.UserName);
+        Response.Write(ACustomer.Username);
         //display the Password for this entry
         Response.Write(ACustomer.Password);
         //display the Paymentid for this entry
