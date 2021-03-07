@@ -24,7 +24,7 @@ public partial class ACustomer : System.Web.UI.Page
             //if this not a new record
             if (CustomerID != -1)
             {
-                //dispaky the current data for the record
+                //display the current data for the record
                 DisplayCustomers();
             }
         }
