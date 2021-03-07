@@ -91,7 +91,7 @@ namespace FlightClasses
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the stored proceedure
-            DB.AddParameter("CustomerID", mThisCustomer.CustomerID);
+            DB.AddParameter("@CustomerID", mThisCustomer.CustomerID);
             //execute the stored proceedure
             DB.Execute("sproc_tblCustomer_Delete");
         }

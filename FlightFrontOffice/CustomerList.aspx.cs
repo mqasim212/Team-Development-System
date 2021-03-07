@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using FlightClasses;
 
 public partial class CustomerList : System.Web.UI.Page
 {
@@ -20,7 +21,7 @@ public partial class CustomerList : System.Web.UI.Page
     void DisplayCustomers()
     {
         //create an instance of the customer collection
-        FlightClasses.clsCustomerCollection Customers = new FlightClasses.clsCustomerCollection();
+        clsCustomerCollection Customers = new clsCustomerCollection();
         //set the data source to the list of customers in the collection
         lstCustomers.DataSource = Customers.CustomerList;
         //set the name of the primary key
@@ -59,7 +60,7 @@ public partial class CustomerList : System.Web.UI.Page
         else
         {
             //display an error
-            lblError.Text= "Please select a record to delete from the list";
+            lblError.Text = "Please select a record to delete from the list";
         }
     }
 
