@@ -125,4 +125,10 @@ public partial class ACustomer : System.Web.UI.Page
         txtPaymentID.Text = CustomerBook.ThisCustomer.PaymentID;
         txtPaymentType.Text = CustomerBook.ThisCustomer.PaymentType;
     }
+
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        //all done so redirect back to the main page
+        Response.Redirect("CustomerList.aspx");
+    }
 }
