@@ -85,4 +85,53 @@ public partial class CustomerList : System.Web.UI.Page
             lblError.Text = "Please select a record to delete from the list";
         }      
     }
+
+    protected void btnDisplayAll_Click(object sender, EventArgs e)
+    {
+        //display all names
+        DisplayCustomers("");
+    }
+
+    Int32 DisplayCustomers(string NameFilter)
+    {
+        //var to store the primary key
+        string Username;
+        //var to store the name
+        string Name;
+        //create an instance of customer collection class
+        clsCustomerCollection Customers = new clsCustomerCollection();
+        Customers.ReportByName(NameFilter);
+        //var to store the count of records
+        Int32 RecordCount;
+        //var to store the index for the loop
+        Int32 Index = 0;
+        //get the count of records
+        RecordCount = Customers.Count;
+        //clear the list box
+        lstCustomers.Items.Clear();
+        //while there are records 
+        while (Index < RecordCount)
+        {
+            //get the primary key
+            Username = Customers.CustomerList[Index].Username;
+            //get the custome name
+            Name = Customers.CustomerList[Index].Name;
+            //create a new entry for th list box
+            ListItem NewEntry = new ListItem(Name  + " " +  Username.ToString());
+            //add the customer to the list
+            lstCustomers.Items.Add(NewEntry);
+            //move the index to the next record
+            Index++;
+        }
+        //return to the count of records found
+        return RecordCount;
+    }
+
+
+    protected void btnApply_Click(object sender, EventArgs e)
+    {
+        Int32 RecordCount;
+        RecordCount = DisplayCustomers(txtName.Text);
+        lblError.Text = RecordCount + " Record Found";
+    }
 }

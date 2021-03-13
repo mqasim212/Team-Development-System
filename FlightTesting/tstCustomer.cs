@@ -198,12 +198,13 @@ namespace FlightTesting
             //create a string variable to store the result of the validation
             string Error = "";
             //create some test data to test the method
-            string SomePhone = "";
+            string SomePhone = "1234567";
             //invoke the method
             Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
+
         [TestMethod]
         //test that the customer validation throws an error when customer is blank
         public void PhoneMaxPlusOne()
@@ -409,6 +410,22 @@ namespace FlightTesting
         }
         [TestMethod]
         //test that the customer validation throws an error when customer is blank
+        public void PaymentIDMid()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string SomePaymentID = "Adama";
+            //invoke the method
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
         public void PaymentIDExtremeMax()
         {
             //create an instance of the class
@@ -449,6 +466,21 @@ namespace FlightTesting
             string Error = "";
             //create some test data to test the method
             string SomePaymentType = "Debit transactio";
+            //invoke the method
+            Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
+            //Test to see that the result is not ok. i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        //test that the customer validation throws an error when customer is blank
+        public void PaymentTypeMid()
+        {
+            //create an instance of the class
+            clsCustomer ACustomer = new clsCustomer();
+            //create a string variable to store the result of the validation
+            string Error = "";
+            //create some test data to test the method
+            string SomePaymentType = "Adamomar";
             //invoke the method
             Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentID, SomePaymentType);
             //Test to see that the result is not ok. i.e there should be an error message

@@ -68,7 +68,7 @@ namespace FlightClasses
                 //return an error message
                 Error = Error + "The customer name cannot have more than 20 characters";
             }
-            if (someName.Length == 0)
+            if (someName.Length == 0 | someName.Length < 1)
             {
                 //return an error message
                 Error = Error + "The customer name may not be blank";
@@ -79,7 +79,7 @@ namespace FlightClasses
                 //return an error message
                 Error = Error + "The Phone Number cannot have more than 11 characters";
             }
-            if (somePhone.Length == 0)
+            if (somePhone.Length == 0 | somePhone.Length <8)
             {
                 //return an error message
                 Error = Error + "The Phone Number may not be blank";
@@ -90,7 +90,7 @@ namespace FlightClasses
                 //return an error message
                 Error = Error + "The email cannot have more than 30 characters";
             }
-            if (someEmail.Length == 3)
+            if (someEmail.Length == 0 | someEmail.Length < 4)
             {
                 //return an error message
                 Error = Error + "The Email may not be blank";
@@ -101,7 +101,7 @@ namespace FlightClasses
                 //return an error message
                 Error = Error + "The UserName cannot have more than 15 characters";
             }
-            if (someUsername.Length == 4)
+            if (someUsername.Length == 0 | someUsername.Length < 5)
             {
                 //return an error message
                 Error = Error + "The UserName may not be blank";
@@ -112,7 +112,7 @@ namespace FlightClasses
                 //return an error message
                 Error = Error + "The Password cannot have more than 20 characters";
             }
-            if (somePassword.Length == 5)
+            if (somePassword.Length == 0 | somePassword.Length < 6)
             {
                 //return an error message
                 Error = Error + "The Password may not be blank";
@@ -123,7 +123,7 @@ namespace FlightClasses
                 //return an error message
                 Error = Error + "The PaymentID cannot have more than 9 characters";
             }
-            if (somePaymentID.Length == 0)
+            if (somePaymentID.Length == 0 | somePaymentID.Length < 6)
             {
                 //return an error message
                 Error = Error + "The PaymentID may not be blank";
@@ -134,7 +134,7 @@ namespace FlightClasses
                 //return an error message
                 Error = Error + "The PaymentType cannot have more than 15 characters";
             }
-            if (somePaymentType.Length == 9)
+            if (somePaymentType.Length == 0 | somePaymentType.Length < 10)
             {
                 //return an error message
                 Error = Error + "The PaymentType may not be blank";
