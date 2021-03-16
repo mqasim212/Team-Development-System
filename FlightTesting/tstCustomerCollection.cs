@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace FlightTesting
 {
     [TestClass]
-    public class tstCustomerCollectioncs
+    public class tstCustomerCollection
     {
         [TestMethod]
         public void InstanceOK()
@@ -23,7 +23,7 @@ namespace FlightTesting
             //create an instance of the class
             clsCustomerCollection AllCustomers = new clsCustomerCollection();
             //create some test data to assign to the property
-            //in this cas the data needs to be a list of objects
+            //in this case the data needs to be a list of objects
             List<clsCustomer> TestList = new List<clsCustomer>();
             //add an item to the list
             //create the item of test data
