@@ -62,6 +62,7 @@ namespace FlightClasses
         {
             //string variable to store the error message
             string Error = "";
+
             //if the name of the customer is more than 20 characters
             if (someName.Length > 20)
             {

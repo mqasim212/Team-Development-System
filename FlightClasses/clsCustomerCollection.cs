@@ -57,6 +57,7 @@ namespace FlightClasses
                 //we shall worry about this later
             }
         }
+
         //constructor for the class
         public clsCustomerCollection()
         {
@@ -73,7 +74,7 @@ namespace FlightClasses
             //adds a new record to the database based on the values of thiscustomer
             //connect to the database
             clsDataConnection DB = new clsDataConnection();
-            //set the parameters for the stored poceedure
+            //set the parameters for the stored proceedure
             DB.AddParameter("@Name", mThisCustomer.Name);
             DB.AddParameter("@Phone", mThisCustomer.Phone);
             DB.AddParameter("@Email", mThisCustomer.Email);

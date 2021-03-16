@@ -8,7 +8,7 @@ namespace FlightTesting
     public class tstCustomer
     {
         //good test data
-        //create sine test data to pass to the method
+        //create some test data to pass to the method
         string SomeName = "Abraham";
         string SomePhone = "04855434542";
         string SomeEmail = "OverAchievers@outlook.com";
@@ -130,8 +130,8 @@ namespace FlightTesting
             Assert.AreEqual(ACustomer.PaymentType, SomePaymentType);
         }
         [TestMethod]
-        //used to test the PaymentID property of the class
-        public void Valid()
+        //used to test the valid method of the class
+        public void ValidMethod()
         {
             //create an instance of the class
             clsCustomer ACustomer = new clsCustomer();
@@ -143,7 +143,6 @@ namespace FlightTesting
             Assert.AreEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void NameMinLessOne()
         {
             //create an instance of the class
@@ -158,7 +157,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void NameMaxPlusOne()
         {
             //create an instance of the class
@@ -173,7 +171,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void NameExtremeMax()
         {
             //create an instance of the class
@@ -190,7 +187,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void PhoneMinLessOne()
         {
             //create an instance of the class
@@ -206,7 +202,6 @@ namespace FlightTesting
         }
 
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void PhoneMaxPlusOne()
         {
             //create an instance of the class
@@ -221,7 +216,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void PhoneExtremeMax()
         {
             //create an instance of the class
@@ -238,7 +232,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
          [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void EmailMinLessOne()
         {
             //create an instance of the class
@@ -253,7 +246,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void EmailMaxPlusOne()
         {
             //create an instance of the class
@@ -268,7 +260,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void EmailExtremeMax()
         {
             //create an instance of the class
@@ -285,7 +276,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void UsernameMinLessOne()
         {
             //create an instance of the class
@@ -300,7 +290,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void UsernameMaxPlusOne()
         {
             //create an instance of the class
@@ -315,7 +304,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void UsernameExtremeMax()
         {
             //create an instance of the class
@@ -332,7 +320,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void PasswordMinLessOne()
         {
             //create an instance of the class
@@ -347,7 +334,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void PasswordMaxPlusOne()
         {
             //create an instance of the class
@@ -362,7 +348,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void PasswordExtremeMax()
         {
             //create an instance of the class
@@ -379,7 +364,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void PaymentIDMinLessOne()
         {
             //create an instance of the class
@@ -394,7 +378,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void PaymentIDMaxPlusOne()
         {
             //create an instance of the class
@@ -409,7 +392,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void PaymentIDMid()
         {
             //create an instance of the class
@@ -425,7 +407,6 @@ namespace FlightTesting
         }
 
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void PaymentIDExtremeMax()
         {
             //create an instance of the class
@@ -442,7 +423,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void PaymentTypeMinLessOne()
         {
             //create an instance of the class
@@ -457,7 +437,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void PaymentTypeMaxPlusOne()
         {
             //create an instance of the class
@@ -472,7 +451,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void PaymentTypeMid()
         {
             //create an instance of the class
@@ -487,7 +465,6 @@ namespace FlightTesting
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
-        //test that the customer validation throws an error when customer is blank
         public void PaymentTypeExtremeMax()
         {
             //create an instance of the class
