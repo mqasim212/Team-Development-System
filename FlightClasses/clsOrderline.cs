@@ -16,8 +16,8 @@ namespace FlightClasses
         public string Valid(string someBookingNo, string someQuantity)
         {
             //string variable to store the error message
-            string Error = "";
-
+            string Error = ""; 
+            
             //if the  BookingNo is more than 30 characters
             if (someBookingNo.Length > 5)
             {
@@ -42,6 +42,11 @@ namespace FlightClasses
                 Error = Error + "The  Staff Email may not be blank";
             }
             return Error;
+        }
+
+        public bool Find(int OrderlineID)
+        {
+            return true;
         }
     }
 }

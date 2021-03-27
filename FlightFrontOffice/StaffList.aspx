@@ -13,7 +13,7 @@
         <asp:ListBox ID="lstStaff" runat="server" style="z-index: 1; left: 103px; top: 77px; position: absolute; height: 279px; width: 417px"></asp:ListBox>
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 108px; top: 365px; position: absolute" Text="lblError"></asp:Label>
         <asp:Label ID="lblEnterName" runat="server" Font-Bold="True" Font-Size="Large" style="z-index: 1; left: 109px; top: 406px; position: absolute; height: 27px; width: 304px" Text="Please Enter The Staff Name:"></asp:Label>
-        <asp:Button ID="btnDisplayAll" runat="server" style="z-index: 1; left: 283px; top: 499px; position: absolute; width: 145px; height: 42px; right: 444px" Text="Display All" OnClick="btnDisplayAll_Click" />
+        <asp:Button ID="btnDisplayAll" runat="server" style="z-index: 1; left: 283px; top: 499px; position: absolute; width: 218px; height: 42px; right: 314px" Text=" Display All (Email Address)" OnClick="btnDisplayAll_Click" />
         <asp:TextBox ID="txtName" runat="server" style="z-index: 1; left: 108px; top: 442px; position: absolute; height: 33px; width: 342px"></asp:TextBox>
         <asp:Button ID="btnApply" runat="server" style="z-index: 1; left: 115px; top: 501px; position: absolute; height: 41px; width: 101px" Text="Apply" OnClick="btnApply_Click" />
         <asp:Button ID="btnAdd" runat="server" style="z-index: 1; left: 113px; top: 573px; position: absolute; height: 42px; width: 92px" Text="Add" OnClick="btnAdd_Click" />

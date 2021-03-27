@@ -6,41 +6,41 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using FlightClasses;
 
-public partial class StaffDelete : System.Web.UI.Page
+public partial class OrderlineDelete : System.Web.UI.Page
 {
     //var to store the primary key value of the record to be deleted
-    Int32 StaffID;
+    Int32 OrderlineID;
 
-    //event handler for the load object
+    //event handler for the load event
     protected void Page_Load(object sender, EventArgs e)
     {
-        //get the number of the staff to be deleted from the session object
-        StaffID = Convert.ToInt32(Session["StaffID"]);
+        //get the number of the orderlines to be deleted from the session object
+        OrderlineID = Convert.ToInt32(Session["OrderlineID"]);
     }
 
-    void DeleteStaff()
+    void DeleteOrderline()
     {
         //function to delete the selected record
 
-        //create a new instance of the staff book
-        clsStaffCollection StaffBook = new clsStaffCollection();
+        //create a new instance of the orderline book
+        clsOrderlineCollection OrderlineBook = new clsOrderlineCollection();
         //find the record to delete
-        StaffBook.ThisStaff.Find(StaffID);
+        OrderlineBook.ThisOrderline.Find(OrderlineID);
         //delete the record
-        StaffBook.Delete();
+        OrderlineBook.Delete();
     }
 
     protected void btnYes_Click(object sender, EventArgs e)
     {
         //delete the record
-        DeleteStaff();
+        DeleteOrderline();
         //redirect to the main page
-        Response.Redirect("StaffList.aspx"); 
+        Response.Redirect("OrderlineList.aspx");
     }
 
     protected void btnNo_Click(object sender, EventArgs e)
     {
         //redirect to the main page
-        Response.Redirect("StaffList.aspx");
+        Response.Redirect("OrderlineList.aspx");
     }
 }
