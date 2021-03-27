@@ -81,7 +81,7 @@ public partial class StaffList : System.Web.UI.Page
         else
         {
             //display an error
-            lblError.Text = "Please select a record to delete from the list";
+            lblError.Text = "Please select a record to update from the list";
         }
     }
 
