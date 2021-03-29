@@ -244,12 +244,12 @@ namespace FlightTesting
         }
 
         [TestMethod]
-        //used to test the staff name property of the class
+        //used to test the staffID property of the class
         public void TestStaffIDFound()
         {
             //create an instance of the class
             clsStaff AStaff = new clsStaff();
-            //boolean variable to store the result of the validation
+            //boolean variable to store the result of the search
             Boolean Found = false;
             //boolean variable to record if data is ok
             Boolean OK = true;
@@ -267,12 +267,12 @@ namespace FlightTesting
         }
 
         [TestMethod]
-        //used to test the staff name property of the class
+        //used to test the staff email property of the class
         public void TestEmailFound()
         {
             //create an instance of the class
             clsStaff AStaff = new clsStaff();
-            //boolean variable to store the result of the validation
+            //boolean variable to store the result of the vsearch
             Boolean Found = false;
             //boolean variable to record if data is ok
             Boolean OK = true;
@@ -295,7 +295,7 @@ namespace FlightTesting
         {
             //create an instance of the class
             clsStaff AStaff = new clsStaff();
-            //boolean variable to store the result of the validation
+            //boolean variable to store the result of the search
             Boolean Found = false;
             //boolean variable to record if data is ok
             Boolean OK = true;
@@ -312,12 +312,12 @@ namespace FlightTesting
             Assert.IsTrue(OK);
         }
         [TestMethod]
-        //used to test the staff name property of the class
+        //used to test the staff password property of the class
         public void TestPasswordFound()
         {
             //create an instance of the class
             clsStaff AStaff = new clsStaff();
-            //boolean variable to store the result of the validation
+            //boolean variable to store the result of the search
             Boolean Found = false;
             //boolean variable to record if data is ok
             Boolean OK = true;
