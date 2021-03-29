@@ -84,6 +84,51 @@ public partial class OrderlineList : System.Web.UI.Page
             lblError.Text = "Please select a record to update from the list";
         }
     }
+
+    protected void btnDisplayAll_Click(object sender, EventArgs e)
+    {
+        //display all orderlines
+        DisplayOrderline("");
+    }
+
+    Int32 DisplayOrderline(string BookingNoFilter)
+    {
+        //var to store the BookingNo
+        string BookingNo;
+        //create an instance of the Orderline collection class
+        clsOrderlineCollection Orderline = new clsOrderlineCollection();
+        Orderline.ReportByBookingNo(BookingNoFilter);
+        //var to store the count of records
+        Int32 RecordCount;
+        //var to store the index for the loop
+        Int32 Index = 0;
+        //get the count of records
+        RecordCount = Orderline.Count;
+        //clear the list box
+        lstOrderline.Items.Clear();
+        //while there are records 
+        while (Index < RecordCount)
+        {
+            //get the BookingNo
+            BookingNo = Orderline.OrderlineList[Index].BookingNo;
+            //create a new entry for th list box
+            ListItem NewEntry = new ListItem(BookingNo + " " .ToString());
+            //add the staff to the list
+            lstOrderline.Items.Add(NewEntry);
+            //move the index to the next record
+            Index++;
+        }
+        //return to the count of records found
+        return RecordCount;
+    }
+
+    protected void btnApply_Click(object sender, EventArgs e)
+    {
+        Int32 RecordCount;
+        RecordCount = DisplayOrderline(txtBookingNo.Text);
+        lblError.Text = RecordCount + " Record Found";
+    }
 }
+
 
 

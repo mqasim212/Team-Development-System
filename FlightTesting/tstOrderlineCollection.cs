@@ -189,9 +189,146 @@ namespace FlightTesting
             //create an instance of the filtered data
             clsOrderlineCollection FilteredOrderline = new clsOrderlineCollection();
             //apply a Booking Number that does not exist
-            FilteredOrderline.ReportByBookingNo("xxxxx");
+            FilteredOrderline.ReportByBookingNo("YYYYY");
             //test to see that there are no records
             Assert.AreEqual(0, FilteredOrderline.Count);
+        }
+
+        [TestMethod]
+        public void ReportByBookingNoTestDataFound()
+        {
+            //create an instance of the filtered data
+            clsOrderlineCollection FilteredOrderline = new clsOrderlineCollection();
+            //var to store the outcome
+            Boolean OK = true;
+            //apply a booking no that doesnt exist
+            FilteredOrderline.ReportByBookingNo("Tes12");
+            //check that the correct number of records are found
+            if (FilteredOrderline.Count == 2)
+            {
+                //check that the first record is ID 34
+                if (FilteredOrderline.OrderlineList[0].OrderlineID != 34)
+                {
+                    OK = false;
+                }
+                //check that the first record is ID 35
+                if (FilteredOrderline.OrderlineList[1].OrderlineID != 35)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see that there are no records
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void FindMethod()
+        {
+            //create an instance of a class
+            clsOrderline AOrderline = new clsOrderline();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //create some test data to use with the method
+            Int32 OrderlineID = 44;
+            //invoke the method
+            Found = AOrderline.Find(OrderlineID);
+            //test to see that the result is correct
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        //used to test the OrderlineID property of the class
+        public void TestOrderlineIDFound()
+        {
+            //create an instance of a class
+            clsOrderline AOrderline = new clsOrderline();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 OrderlineID = 44;
+            //invoke the method
+            Found = AOrderline.Find(OrderlineID);
+            //check the OrderlineID
+            if (AOrderline.OrderlineID != 44)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        //used to test the BookingNo property of the class
+        public void TestBookingNoFound()
+        {
+            //create an instance of a class
+            clsOrderline AOrderline = new clsOrderline();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 BookingNo = 44;
+            //invoke the method
+            Found = AOrderline.Find(BookingNo);
+            //check the OrderlineID
+            if (AOrderline.BookingNo != "xxxxx")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        //used to test the Quantity property of the class
+        public void TestQuantityFound()
+        {
+            //create an instance of a class
+            clsOrderline AOrderline = new clsOrderline();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 Quantity = 44;
+            //invoke the method
+            Found = AOrderline.Find(Quantity);
+            //check the OrderlineID
+            if (AOrderline.Quantity != 2)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        //used to test the Quantity property of the class
+        public void TestBookingIDFound()
+        {
+            //create an instance of a class
+            clsOrderline AOrderline = new clsOrderline();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 BookingID = 44;
+            //invoke the method
+            Found = AOrderline.Find(BookingID);
+            //check the OrderlineID
+            if (AOrderline.BookingID != 1)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
         }
     }
 }
