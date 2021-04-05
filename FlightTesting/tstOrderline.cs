@@ -22,7 +22,7 @@ namespace FlightTesting
         }
 
         [TestMethod]
-        //used to test the name property of the class
+        //used to test the orderline id property of the class
         public void OrderlineID()
         {
             //create an instance of a class
@@ -37,7 +37,7 @@ namespace FlightTesting
 
 
         [TestMethod]
-        //used to test the name property of the class
+        //used to test the booking no property of the class
         public void BookingNo()
         {
             //create an instance of a class
@@ -51,7 +51,7 @@ namespace FlightTesting
         }
 
         [TestMethod]
-        //used to test the name property of the class
+        //used to test the quantity property of the class
         public void Quantity()
         {
             //create an instance of a class
@@ -64,7 +64,7 @@ namespace FlightTesting
             Assert.AreEqual(AOrderline.Quantity, SomeQuantity);
         }
         [TestMethod]
-        //used to test the name property of the class
+        //used to test the booking id foregn key property of the class
         public void BookingID()
         {
             //create an instance of a class
@@ -78,7 +78,7 @@ namespace FlightTesting
         }
 
         [TestMethod]
-        //used to test the name property of the class
+        //used to test the valid method of the class
         public void ValidMethod()
         {
             //create an instance of a class

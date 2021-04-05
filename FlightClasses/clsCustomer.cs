@@ -143,7 +143,8 @@ namespace FlightClasses
 
             return Error;
         }
-        //public property for the paymentID
+
+        //public property for the customerID
         public int CustomerID
         {
             get

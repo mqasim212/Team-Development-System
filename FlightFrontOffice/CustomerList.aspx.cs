@@ -41,7 +41,7 @@ public partial class CustomerList : System.Web.UI.Page
         Response.Redirect("ACustomer.aspx");
     }
 
-    //event handler for the dele
+    //event handler for the delete
     protected void btnDelete_Click(object sender, EventArgs e)
     {
         //var to store the pariamry key value of the record to be deleted
