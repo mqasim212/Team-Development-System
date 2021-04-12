@@ -228,7 +228,7 @@ namespace FlightTesting
         }
 
         [TestMethod]
-        //used to test the staff name property of the class
+        //used to test the staff find method of the class
         public void FindMethod()
         {
             //create an instance of the class

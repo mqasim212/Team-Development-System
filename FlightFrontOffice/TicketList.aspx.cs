@@ -6,54 +6,55 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using FlightClasses;
 
-public partial class OrderlineList : System.Web.UI.Page
+public partial class TicketList : System.Web.UI.Page
 {
-    //this function handles the load object for the page
+    //This function handles the load event for the page
     protected void Page_Load(object sender, EventArgs e)
     {
         //if this is the first time the page is displayed
         if (IsPostBack == false)
         {
             //update the list box
-            DisplayOrderline();
+            DisplayTicket();
         }
     }
 
-    void DisplayOrderline()
+    void DisplayTicket()
     {
-        //create an instance of orderline collection
-        clsOrderlineCollection Orderline = new clsOrderlineCollection();
-        //set the data source to the list of orderlines in the collection
-        lstOrderline.DataSource = Orderline.OrderlineList;
+        //create an instance of a class
+        clsTicketCollection Ticket = new clsTicketCollection();
+        //set the data source to the list of tickets in the collection
+        lstTicket.DataSource = Ticket.TicketList;
         //set the name of the primary key
-        lstOrderline.DataValueField = "OrderlineID";
+        lstTicket.DataValueField = "TicketID";
         //set the data field to display
-        lstOrderline.DataTextField = "BookingNo";
+        lstTicket.DataTextField = "TicketNo";
         //bind the data to the list
-        lstOrderline.DataBind();
+        lstTicket.DataBind();
     }
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
         //store -1 into the session object to indicate this is a new record
-        Session["OrderlineID"] = -1;
+        Session["TicketID"] = -1;
         //redirect to the data entry page
-        Response.Redirect("AOrderline.aspx");
+        Response.Redirect("ATicket.aspx");
     }
 
-    protected void Delete_Click(object sender, EventArgs e)
+    //event handler for the delete button
+    protected void btnDelete_Click(object sender, EventArgs e)
     {
         //var to store the pariamry key value of the record to be deleted
-        Int32 OrderlineID;
+        Int32 TicketID;
         //if a record has been selected from the list
-        if (lstOrderline.SelectedIndex != -1)
+        if (lstTicket.SelectedIndex != -1)
         {
             //get the primary key value of the record to delete
-            OrderlineID = Convert.ToInt32(lstOrderline.SelectedValue);
+            TicketID = Convert.ToInt32(lstTicket.SelectedValue);
             //store the data in the session object
-            Session["OrderlineID"] = OrderlineID;
+            Session["TicketID"] = TicketID;
             //redirect to the delete page
-            Response.Redirect("OrderlineDelete.aspx");
+            Response.Redirect("TicketDelete.aspx");
         }
         //if no record has been selected
         else
@@ -63,19 +64,19 @@ public partial class OrderlineList : System.Web.UI.Page
         }
     }
 
-    protected void Edit_Click(object sender, EventArgs e)
+    protected void btnEdit_Click(object sender, EventArgs e)
     {
-        //var to store the pariamry key value of the record to be edited
-        Int32 OrderlineID;
+        //var to store the pariamry key value of the record to be deleted
+        Int32 TicketID;
         //if a record has been selected from the list
-        if (lstOrderline.SelectedIndex != -1)
+        if (lstTicket.SelectedIndex != -1)
         {
             //get the primary key value of the record to edit
-            OrderlineID = Convert.ToInt32(lstOrderline.SelectedValue);
+            TicketID = Convert.ToInt32(lstTicket.SelectedValue);
             //store the data in the session object
-            Session["OrderlineID"] = OrderlineID;
+            Session["TicketID"] = TicketID;
             //redirect to the edit page
-            Response.Redirect("AOrderline.aspx");
+            Response.Redirect("ATicket.aspx");
         }
         //if no record has been selected
         else
@@ -87,34 +88,35 @@ public partial class OrderlineList : System.Web.UI.Page
 
     protected void btnDisplayAll_Click(object sender, EventArgs e)
     {
+
         //display all orderlines
-        DisplayOrderline("");
+        DisplayTicket("");
     }
 
-    Int32 DisplayOrderline(string BookingNoFilter)
+    Int32 DisplayTicket(string TicketNoFilter)
     {
-        //var to store the BookingNo
-        string BookingNo;
+        //var to store the TicketNo
+        string TicketNo;
         //create an instance of the Orderline collection class
-        clsOrderlineCollection Orderline = new clsOrderlineCollection();
-        Orderline.ReportByBookingNo(BookingNoFilter);
+        clsTicketCollection Ticket = new clsTicketCollection();
+        Ticket.ReportByTicketNo(TicketNoFilter);
         //var to store the count of records
         Int32 RecordCount;
         //var to store the index for the loop
         Int32 Index = 0;
         //get the count of records
-        RecordCount = Orderline.Count;
+        RecordCount = Ticket.Count;
         //clear the list box
-        lstOrderline.Items.Clear();
+        lstTicket.Items.Clear();
         //while there are records 
         while (Index < RecordCount)
         {
-            //get the BookingNo
-            BookingNo = Orderline.OrderlineList[Index].BookingNo;
+            //get the Ticket no
+            TicketNo = Ticket.TicketList[Index].TicketNo;
             //create a new entry for the list box
-            ListItem NewEntry = new ListItem(BookingNo + " " .ToString());
+            ListItem NewEntry = new ListItem(TicketNo + " ".ToString());
             //add the staff to the list
-            lstOrderline.Items.Add(NewEntry);
+            lstTicket.Items.Add(NewEntry);
             //move the index to the next record
             Index++;
         }
@@ -125,10 +127,9 @@ public partial class OrderlineList : System.Web.UI.Page
     protected void btnApply_Click(object sender, EventArgs e)
     {
         Int32 RecordCount;
-        RecordCount = DisplayOrderline(txtBookingNo.Text);
+        RecordCount = DisplayTicket(txtTicketNo.Text);
         lblError.Text = RecordCount + " Record Found";
     }
 }
-
 
 
