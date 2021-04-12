@@ -2,37 +2,36 @@
 
 namespace FlightClasses
 {
-    public class clsTicket
+    public class clsFlight
     {
-        //private data member for the TicketID property
+        //private data member for the flight id property
+        private int mFlightID;
+        //private data member for the date of birth
+        private string mDateOfBirth;
+        //private data member for the gate
+        private string mGate;
+        //private data member for the departure date
+        private DateTime mDepartureDate;
+        //private data member for the ticket id
         private int mTicketID;
-        //private data member for the ticket purchase date
-        private DateTime mTicketPurchaseDate;
-        ////private data member for the ticket no
-        private string mTicketNo;
-        ////private data member for the flight no
-        private int mFlightNo;
-        ////private data member for the seat no
-        private string mSeatNo;
 
-
-        public bool Find(int TicketID)
+        public bool Find(int FlightID)
         {
             //create an instance of the data connection
             clsDataConnection DB = new clsDataConnection();
-            //add the parameter for the ticket id to search for
-            DB.AddParameter("@TicketID", TicketID);
+            //add the parameter for the flight id to search for
+            DB.AddParameter("@FlightID", FlightID);
             //execute the stored proceedure
-            DB.Execute("sproc_tblTicket_FilterByTicketID");
+            DB.Execute("sproc_tblFlight_FilterByFlightID");
             //if one record is found (there should be either one or zero)
             if (DB.Count == 1)
             {
                 //copy the data from the database to the private data members
+                mFlightID = Convert.ToInt32(DB.DataTable.Rows[0]["FlightID"]);
+                mDateOfBirth = Convert.ToString(DB.DataTable.Rows[0]["DateOfBirth"]);
+                mGate = Convert.ToString(DB.DataTable.Rows[0]["Gate"]);
+                mDepartureDate = Convert.ToDateTime(DB.DataTable.Rows[0]["DepartureDate"]);
                 mTicketID = Convert.ToInt32(DB.DataTable.Rows[0]["TicketID"]);
-                mTicketPurchaseDate = Convert.ToDateTime(DB.DataTable.Rows[0]["TicketPurchaseDate"]);
-                mTicketNo = Convert.ToString(DB.DataTable.Rows[0]["TicketNo"]);
-                mFlightNo = Convert.ToInt32(DB.DataTable.Rows[0]["FlightNo"]);
-                mSeatNo = Convert.ToString(DB.DataTable.Rows[0]["SeatNo"]);
                 //return that everything worked ok
                 return true;
             }
@@ -45,7 +44,7 @@ namespace FlightClasses
         }
 
 
-        public string Valid(string someTicketPurchaseDate, string someTicketNo, string someFlightNo, string someSeatNo)
+        public string Valid(string someDateOfBirth, string someGate, string someDepartureDate)
         {
             //string variable to store the error message
             string Error = "";
@@ -53,46 +52,34 @@ namespace FlightClasses
             //create a temporary variable to store the date values
             DateTime DateTemp;
 
-            //if the  ticket no is more than 8 characters
-            if (someTicketNo.Length > 8)
+            //if the  DateOfBirth is more than 18 characters
+            if (someDateOfBirth.Length > 18)
             {
                 //return an error message
-                Error = Error + "The Ticket No name cannot have more than 8 characters";
+                Error = Error + "The DateOfBirth name cannot have more than 18 characters";
             }
-            if (someTicketNo.Length == 0 | someTicketNo.Length < 4)
+            if (someDateOfBirth.Length == 0 | someDateOfBirth.Length < 8)
             {
                 //return an error message
-                Error = Error + "The Ticket No may not be blank";
-            }
-
-            //if the  Flight no is more than 5 characters
-            if (someFlightNo.Length > 5)
-            {
-                //return an error message
-                Error = Error + "The Flight No name cannot have more than 5 characters";
-            }
-            if (someFlightNo.Length == 0 | someFlightNo.Length < 1)
-            {
-                //return an error message
-                Error = Error + "The Flight No may not be blank";
+                Error = Error + "The DateOfBirth may not be blank";
             }
 
-            //if the  Seat no is more than 5 characters
-            if (someSeatNo.Length > 5)
+            //if the  Gate is more than 5 characters
+            if (someGate.Length > 5)
             {
                 //return an error message
-                Error = Error + "The Seat No name cannot have more than 5 characters";
+                Error = Error + "The Gate name cannot have more than 5 characters";
             }
-            if (someSeatNo.Length == 0 | someSeatNo.Length < 2)
+            if (someGate.Length == 0 | someGate.Length < 2)
             {
                 //return an error message
-                Error = Error + "The Seat No may not be blank";
+                Error = Error + "The Gate may not be blank";
             }
 
             try
             {
                 //copy the ticket purchase date value to the datetemp variable
-                DateTemp = Convert.ToDateTime(someTicketPurchaseDate);
+                DateTemp = Convert.ToDateTime(someDepartureDate);
                 if (DateTemp < DateTime.Now.Date)
                 {
                     // record the error
@@ -111,8 +98,67 @@ namespace FlightClasses
                 Error = Error + "the date was not a valid date : ";
             }
 
-            //return any error messages
             return Error;
+        }
+
+        //public property for the FlightID
+        public int FlightID
+        {
+            get
+            {
+                //return the private data
+                return mFlightID;
+            }
+            set
+            {
+                //set the value of the private data member
+                mFlightID = value;
+            }
+        }
+
+        //public property for the DateOfBirth
+        public string DateOfBirth
+        {
+            get
+            {
+                //return the private data
+                return mDateOfBirth;
+            }
+            set
+            {
+                //set the value of the private data member
+                mDateOfBirth = value;
+            }
+        }
+
+        //public property for the Gate
+        public string Gate
+        {
+            get
+            {
+                //return the private data
+                return mGate;
+            }
+            set
+            {
+                //set the value of the private data member
+                mGate = value;
+            }
+        }
+
+        //public property for the DepartureDate
+        public DateTime DepartureDate
+        {
+            get
+            {
+                //return the private data
+                return mDepartureDate;
+            }
+            set
+            {
+                //set the value of the private data member
+                mDepartureDate = value;
+            }
         }
 
         //public property for the TicketID
@@ -130,65 +176,6 @@ namespace FlightClasses
             }
         }
 
-        //public property for the TicketPurchaseDate
-        public DateTime TicketPurchaseDate
-        {
-            get
-            {
-                //return the private data
-                return mTicketPurchaseDate;
-            }
-            set
-            {
-                //set the value of the private data member
-                mTicketPurchaseDate = value;
-            }
-        }
 
-        //public property for the TicketNo
-        public string TicketNo
-        {
-            get
-            {
-                //return the private data
-                return mTicketNo;
-            }
-            set
-            {
-                //set the value of the private data member
-                mTicketNo = value;
-            }
-        }
-
-        //public property for the FlightNo
-        public int FlightNo
-        {
-            get
-            {
-                //return the private data
-                return mFlightNo;
-            }
-            set
-            {
-                //set the value of the private data member
-                mFlightNo = value;
-            }
-        }
-
-
-        //public property for the SeatNo
-        public string SeatNo
-        {
-            get
-            {
-                //return the private data
-                return mSeatNo;
-            }
-            set
-            {
-                //set the value of the private data member
-                mSeatNo = value;
-            }
-        }
     }
 }

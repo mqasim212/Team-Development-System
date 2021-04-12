@@ -95,19 +95,6 @@ namespace FlightTesting
             Assert.AreEqual(ATicket.SeatNo, SomeSeatNo);
         }
 
-        [TestMethod]
-        //used to test the FlightID property of the class
-        public void FlightID()
-        {
-            //create an instance of a class
-            clsTicket ATicket = new clsTicket();
-            //create some test data to assign to the property
-            Int32 FlightID = 2;
-            //assign the data to the property
-            ATicket.FlightID = FlightID;
-            //test to see that the two values are the same
-            Assert.AreEqual(ATicket.FlightID, FlightID);
-        }
 
         [TestMethod]
         //used to test the valid method of the class

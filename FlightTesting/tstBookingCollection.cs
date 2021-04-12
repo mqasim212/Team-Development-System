@@ -44,18 +44,6 @@ namespace FlightTesting
             Assert.AreEqual(AllBooking.BookingList, TestList);
         }
 
-        //[TestMethod]
-        //public void CountProperty()
-        //{
-        //    //create an instance of a class
-        //    clsBookingCollection AllBooking = new clsBookingCollection();
-        //    //create some test data to assign to the property
-        //    Int32 SomeCount = 2;
-        //    //assign the data to the property
-        //    AllBooking.Count = SomeCount;
-        //    //test to see that the two values are the same
-        //    Assert.AreEqual(AllBooking.Count, SomeCount);
-        //}
 
         [TestMethod]
         public void ThisBookingProperty()
@@ -335,7 +323,7 @@ namespace FlightTesting
             //imvoke the method
             Found = ABooking.Find(BookingID);
             //check the booking id
-            if (ABooking.BookingDate != Convert.ToDateTime("2000/01/01"))
+            if (ABooking.BookingDate != Convert.ToDateTime("2001/01/01"))
             {
                 OK = false;
             }

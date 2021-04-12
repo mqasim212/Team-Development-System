@@ -6,8 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using FlightClasses;
 
-public partial class TicketList : System.Web.UI.Page
-{
+public partial class FlightList : System.Web.UI.Page
+{ 
     //This function handles the load event for the page
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -15,46 +15,48 @@ public partial class TicketList : System.Web.UI.Page
         if (IsPostBack == false)
         {
             //update the list box
-            DisplayTicket();
+            DisplayFlight();
         }
-    }
 
-    void DisplayTicket()
-    {
-        //create an instance of a class
-        clsTicketCollection Ticket = new clsTicketCollection();
-        //set the data source to the list of tickets in the collection
-        lstTicket.DataSource = Ticket.TicketList;
-        //set the name of the primary key
-        lstTicket.DataValueField = "TicketID";
-        //set the data field to display
-        lstTicket.DataTextField = "TicketNo";
-        //bind the data to the list
-        lstTicket.DataBind();
+
+        void DisplayFlight()
+        {
+            //create an instance of the collection class
+            clsFlightCollection Flight = new clsFlightCollection();
+            //set the data source to the list of flights in the collection
+            lstFlight.DataSource = Flight.FlightList;
+            //set the name of the primary key
+            lstFlight.DataValueField = "FlightID";
+            //set the data field to display
+            lstFlight.DataTextField = "DateOfBirth";
+            //bind the data to the list
+            lstFlight.DataBind();
+        }
     }
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
         //store -1 into the session object to indicate this is a new record
-        Session["TicketID"] = -1;
+        Session["FlightID"] = -1;
         //redirect to the data entry page
-        Response.Redirect("ATicket.aspx");
+        Response.Redirect("AFlight.aspx");
     }
+
 
     //event handler for the delete button
     protected void btnDelete_Click(object sender, EventArgs e)
     {
-        //var to store the pariamry key value of the record to be deleted
-        Int32 TicketID;
+        //var to store the primary key value of the record to be deleted
+        Int32 FlightID;
         //if a record has been selected from the list
-        if (lstTicket.SelectedIndex != -1)
+        if (lstFlight.SelectedIndex != -1)
         {
             //get the primary key value of the record to delete
-            TicketID = Convert.ToInt32(lstTicket.SelectedValue);
+            FlightID = Convert.ToInt32(lstFlight.SelectedValue);
             //store the data in the session object
-            Session["TicketID"] = TicketID;
+            Session["FlightID"] = FlightID;
             //redirect to the delete page
-            Response.Redirect("TicketDelete.aspx");
+            Response.Redirect("FlightDelete.aspx");
         }
         //if no record has been selected
         else
@@ -64,59 +66,59 @@ public partial class TicketList : System.Web.UI.Page
         }
     }
 
+    //event handler for the edit button
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-        //var to store the pariamry key value of the record to be deleted
-        Int32 TicketID;
+        //var to store the primary key value of the record to be edited
+        Int32 FlightID;
         //if a record has been selected from the list
-        if (lstTicket.SelectedIndex != -1)
+        if (lstFlight.SelectedIndex != -1)
         {
             //get the primary key value of the record to edit
-            TicketID = Convert.ToInt32(lstTicket.SelectedValue);
+            FlightID = Convert.ToInt32(lstFlight.SelectedValue);
             //store the data in the session object
-            Session["TicketID"] = TicketID;
+            Session["FlightID"] = FlightID;
             //redirect to the edit page
-            Response.Redirect("ATicket.aspx");
+            Response.Redirect("AFlight.aspx");
         }
         //if no record has been selected
         else
         {
             //display an error
-            lblError.Text = "Please select a record to update from the list";
+            lblError.Text = "Please select a record to edit from the list";
         }
     }
 
     protected void btnDisplayAll_Click(object sender, EventArgs e)
     {
-
         //display all orderlines
-        DisplayTicket("");
+        DisplayFlight("");
     }
 
-    Int32 DisplayTicket(string TicketNoFilter)
+    Int32 DisplayFlight(string DateOfBirthFilter)
     {
-        //var to store the TicketNo
-        string TicketNo;
+        //var to store the Dateofbirth
+        string DateOfBirth;
         //create an instance of the Orderline collection class
-        clsTicketCollection Ticket = new clsTicketCollection();
-        Ticket.ReportByTicketNo(TicketNoFilter);
+        clsFlightCollection Flight = new clsFlightCollection();
+        Flight.ReportByDateOfBirth(DateOfBirthFilter);
         //var to store the count of records
         Int32 RecordCount;
         //var to store the index for the loop
         Int32 Index = 0;
         //get the count of records
-        RecordCount = Ticket.Count;
+        RecordCount = Flight.Count;
         //clear the list box
-        lstTicket.Items.Clear();
+        lstFlight.Items.Clear();
         //while there are records 
         while (Index < RecordCount)
         {
-            //get the Ticket no
-            TicketNo = Ticket.TicketList[Index].TicketNo;
+            //get the Dateofbirth
+            DateOfBirth = Flight.FlightList[Index].DateOfBirth;
             //create a new entry for the list box
-            ListItem NewEntry = new ListItem(TicketNo + " ".ToString());
+            ListItem NewEntry = new ListItem(DateOfBirth + " ".ToString());
             //add the staff to the list
-            lstTicket.Items.Add(NewEntry);
+            lstFlight.Items.Add(NewEntry);
             //move the index to the next record
             Index++;
         }
@@ -127,7 +129,7 @@ public partial class TicketList : System.Web.UI.Page
     protected void btnApply_Click(object sender, EventArgs e)
     {
         Int32 RecordCount;
-        RecordCount = DisplayTicket(txtTicketNo.Text);
+        RecordCount = DisplayFlight(txtDateOfBirth.Text);
         lblError.Text = RecordCount + " Record Found";
     }
 }
