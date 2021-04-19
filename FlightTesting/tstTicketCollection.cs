@@ -198,7 +198,7 @@ namespace FlightTesting
             //create an instance of the class containing unfiltered results
             clsTicketCollection FilteredTicket = new clsTicketCollection();
             //apply a ticket no that doesnt exist
-            FilteredTicket.ReportByTicketNo("XXXXXXX");
+            FilteredTicket.ReportByTicketNo("XXXXXX");
             //test to see that there are no records
             Assert.AreEqual(0, FilteredTicket.Count);
         }
@@ -211,16 +211,16 @@ namespace FlightTesting
             //var to store outcome
             Boolean OK = true;
             //apply a name that does not exist
-            FilteredTicket.ReportByTicketNo("test");
+            FilteredTicket.ReportByTicketNo("test1");
             //check that the correct number of records are found
             if (FilteredTicket.Count == 2)
             {
-                //Check that the first record is ID 23
+                //Check that the first record is ID 7
                 if (FilteredTicket.TicketList[0].TicketID != 7)
                 {
                     OK = false;
                 }
-                //Check that the first record is ID 24
+                //Check that the first record is ID 9
                 if (FilteredTicket.TicketList[1].TicketID != 9)
                 {
                     OK = false;

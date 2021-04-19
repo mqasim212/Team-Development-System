@@ -56,8 +56,12 @@
     <Compile Include="tstCustomerCollection.cs" />
     <Compile Include="tstFlight.cs" />
     <Compile Include="tstFlightCollection.cs" />
+    <Compile Include="tstLocation.cs" />
+    <Compile Include="tstLocationCollection.cs" />
     <Compile Include="tstOrderline.cs" />
     <Compile Include="tstOrderlineCollection.cs" />
+    <Compile Include="tstPlane.cs" />
+    <Compile Include="tstPlaneCollection.cs" />
     <Compile Include="tstStaff.cs" />
     <Compile Include="tstStaffCollection.cs" />
     <Compile Include="tstTicket.cs" />

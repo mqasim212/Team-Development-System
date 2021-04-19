@@ -6,41 +6,41 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using FlightClasses;
 
-public partial class FlightDelete : System.Web.UI.Page
+public partial class PlaneDelete : System.Web.UI.Page
 {
     //var to store the primary key value of the record to be deleted
-    Int32 FlightID;
+    Int32 PlaneID;
 
     //event handler for the load object
     protected void Page_Load(object sender, EventArgs e)
     {
         //get the number of the customer to be deleted from the session object
-        FlightID = Convert.ToInt32(Session["FlightID"]);
+        PlaneID = Convert.ToInt32(Session["PlaneID"]);
     }
 
-    void DeleteFlight()
+    void DeletePlane()
     {
         //function to delete the selected record
 
         //create a new instance of the Booking book
-        clsFlightCollection FlightBook = new clsFlightCollection();
+        clsPlaneCollection PlaneBook = new clsPlaneCollection();
         //find the record to delete
-        FlightBook.ThisFlight.Find(FlightID);
+        PlaneBook.ThisPlane.Find(PlaneID);
         //delete the record
-        FlightBook.Delete();
+        PlaneBook.Delete();
     }
 
     protected void btnYes_Click(object sender, EventArgs e)
     {
         //delete the record
-        DeleteFlight();
+        DeletePlane();
         //redirect back to the main page
-        Response.Redirect("FlightList.aspx");
+        Response.Redirect("PlaneList.aspx");
     }
 
     protected void btnNo_Click(object sender, EventArgs e)
     {
         //redirect back to the main page
-        Response.Redirect("FlightList.aspx");
+        Response.Redirect("PlaneList.aspx");
     }
 }
