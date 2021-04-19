@@ -323,7 +323,7 @@ namespace FlightTesting
             //imvoke the method
             Found = ABooking.Find(BookingID);
             //check the booking id
-            if (ABooking.BookingDate != Convert.ToDateTime("2001/01/01"))
+            if (ABooking.BookingDate != Convert.ToDateTime("01/01/2000"))
             {
                 OK = false;
             }

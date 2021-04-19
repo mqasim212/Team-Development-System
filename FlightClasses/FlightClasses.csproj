@@ -48,8 +48,13 @@
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsFlight.cs" />
     <Compile Include="clsFlightCollection.cs" />
+    <Compile Include="clsLocation.cs" />
+    <Compile Include="clsLocationCollection.cs" />
     <Compile Include="clsOrderline.cs" />
     <Compile Include="clsOrderlineCollection.cs" />
+    <Compile Include="clsPlane.cs" />
+    <Compile Include="clsPlaneCollection.cs" />
+    <Compile Include="clsSecurity.cs" />
     <Compile Include="clsStaff.cs" />
     <Compile Include="clsStaffCollection.cs" />
     <Compile Include="clsTicket.cs" />
