@@ -34,8 +34,8 @@
     <p>
         &nbsp;</p>
     <p>
-        <asp:Button ID="btnSignUp" runat="server" style="z-index: 1; left: 1145px; top: 34px; position: absolute; height: 53px; width: 114px" Text="Sign Up" />
-        <asp:Button ID="btnLogIn" runat="server" style="z-index: 1; left: 1286px; top: 33px; position: absolute; height: 53px; width: 122px" Text="Log In" />
+        <asp:Button ID="btnSignUp" runat="server" style="z-index: 1; left: 1145px; top: 34px; position: absolute; height: 53px; width: 114px" Text="Sign Up" OnClick="btnSignUp_Click" />
+        <asp:Button ID="btnLogIn" runat="server" style="z-index: 1; left: 1286px; top: 33px; position: absolute; height: 53px; width: 122px" Text="Log In" OnClick="btnLogIn_Click" />
         </p>
     </form>
     <p>

@@ -118,17 +118,7 @@ namespace FlightClasses
                 //return an error message
                 Error = Error + "The Password may not be blank";
             }
-            //if the PaymentID is more than 9 characters
-            if (somePaymentID.Length > 9)
-            {
-                //return an error message
-                Error = Error + "The PaymentID cannot have more than 9 characters";
-            }
-            if (somePaymentID.Length == 0 | somePaymentID.Length < 6)
-            {
-                //return an error message
-                Error = Error + "The PaymentID may not be blank";
-            }
+            
             //if the PaymentType is more than 15 characters
             if (somePaymentType.Length > 15)
             {
@@ -140,6 +130,7 @@ namespace FlightClasses
                 //return an error message
                 Error = Error + "The PaymentType may not be blank";
             }
+
 
             return Error;
         }
