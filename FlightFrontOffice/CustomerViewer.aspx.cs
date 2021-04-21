@@ -24,8 +24,6 @@ public partial class CustomerViewer : System.Web.UI.Page
         Response.Write(ACustomer.Username);
         //display the Password for this entry
         Response.Write(ACustomer.Password);
-        //display the Paymentid for this entry
-        Response.Write(ACustomer.PaymentID);
         //display the payment type for this entry
         Response.Write(ACustomer.PaymentType);
     }

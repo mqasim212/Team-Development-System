@@ -130,6 +130,18 @@ public partial class BookingList : System.Web.UI.Page
         RecordCount = DisplayBooking(txtBookingName.Text);
         lblError.Text = RecordCount + " Record Found";
     }
+
+    protected void btnBackCustomer_Click(object sender, EventArgs e)
+    {
+        //Redirect to the customer page
+        Response.Redirect("MyCustomerAccount.aspx");
+    }
+
+    protected void btnBackStaff_Click(object sender, EventArgs e)
+    {
+        //Redirect to the staff page
+        Response.Redirect("MyStaffAccount.aspx");
+    }
 }
 
 

@@ -11,4 +11,16 @@ public partial class HomePage : System.Web.UI.Page
     {
 
     }
+
+    protected void btnLogIn_Click(object sender, EventArgs e)
+    {
+        //go to sign in page
+        Response.Redirect("SignIn.aspx");
+    }
+
+    protected void btnSignUp_Click(object sender, EventArgs e)
+    {
+        //go to sign in page
+        Response.Redirect("SignUp.aspx");
+    }
 }

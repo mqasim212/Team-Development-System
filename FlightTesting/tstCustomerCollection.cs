@@ -35,8 +35,8 @@ namespace FlightTesting
             TestItem.Email = "OverAchievers@outlook.com";
             TestItem.Username = "Tommy123";
             TestItem.Password = "12133hrf43r";
-            TestItem.PaymentID = "123asd";
             TestItem.PaymentType = "Debit Card";
+            TestItem.SecurityMsg = "ball";
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
@@ -59,8 +59,8 @@ namespace FlightTesting
             TestCustomer.Email = "OverAchievers@outlook.com";
             TestCustomer.Username = "Tommy123";
             TestCustomer.Password = "12133hrf43r";
-            TestCustomer.PaymentID = "123asd";
             TestCustomer.PaymentType = "Debit Card";
+            TestCustomer.SecurityMsg = "ball";
             //assign the data to the property
             AllCustomers.ThisCustomer = TestCustomer;
             //test to see that the two values are the same
@@ -84,8 +84,8 @@ namespace FlightTesting
             TestItem.Email = "OverAchievers@outlook.com";
             TestItem.Username = "Tommy123";
             TestItem.Password = "12133hrf43r";
-            TestItem.PaymentID = "123asd";
             TestItem.PaymentType = "Debit Card";
+            TestItem.SecurityMsg = "ball";
             //add the item to the test list
             TestList.Add(TestItem);
             //assign the data to the property
@@ -110,8 +110,8 @@ namespace FlightTesting
             TestItem.Email = "OverAchievers@outlook.com";
             TestItem.Username = "Tommy123";
             TestItem.Password = "12133hrf43r";
-            TestItem.PaymentID = "123asd";
             TestItem.PaymentType = "Debit Card";
+            TestItem.SecurityMsg = "ball";
             //set ThisCustomer to the test data
             AllCustomers.ThisCustomer = TestItem;
             //add the record
@@ -139,8 +139,8 @@ namespace FlightTesting
             TestItem.Email = "OverAchievers@outlook.com";
             TestItem.Username = "Tommy123";
             TestItem.Password = "12133hrf43r";
-            TestItem.PaymentID = "123asd";
             TestItem.PaymentType = "Debit Card";
+            TestItem.SecurityMsg = "ball";
             //set ThisCustomer to the test data
             AllCustomers.ThisCustomer = TestItem;
             //add the record
@@ -171,8 +171,8 @@ namespace FlightTesting
             TestItem.Email = "OverAchievers@outlook.com";
             TestItem.Username = "Tommy123";
             TestItem.Password = "12133hrf43r";
-            TestItem.PaymentID = "123asd";
             TestItem.PaymentType = "Debit Card";
+            TestItem.SecurityMsg = "ball";
             //set ThisCustomer to the test data
             AllCustomers.ThisCustomer = TestItem;
             //add the record
@@ -185,8 +185,8 @@ namespace FlightTesting
             TestItem.Email = "OverAchiever@outlook.com";
             TestItem.Username = "Tommy145";
             TestItem.Password = "12188hrf43r";
-            TestItem.PaymentID = "123ssc";
             TestItem.PaymentType = "Credit Card";
+            TestItem.SecurityMsg = "bat";
             //set the record based on the new test data
             AllCustomers.ThisCustomer = TestItem;
             //update the record
@@ -398,28 +398,6 @@ namespace FlightTesting
         }
 
         [TestMethod]
-        public void TestPaymentIDFound()
-        {
-            //create an instance of the class we want to create
-            clsCustomer ACustomer = new clsCustomer();
-            //boolean variable to store the result of the search
-            Boolean Found = false;
-            //boolean variable to record if data is ok (assume it is)
-            Boolean OK = true;
-            //create some test data to use with the method
-            Int32 CustomerID = 87;
-            //ivoke the method
-            Found = ACustomer.Find(CustomerID);
-            //Check the Customer ID
-            if (ACustomer.PaymentID != "test12")
-            {
-                OK = false;
-            }
-            //test to see that the result is correct
-            Assert.IsTrue(OK);
-        }
-
-        [TestMethod]
         public void TestPaymentTypeFound()
         {
             //create an instance of the class we want to create
@@ -434,6 +412,28 @@ namespace FlightTesting
             Found = ACustomer.Find(CustomerID);
             //Check the Customer ID
             if (ACustomer.PaymentType != "test card")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestSecurityMsgFound()
+        {
+            //create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is ok (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 CustomerID = 87;
+            //ivoke the method
+            Found = ACustomer.Find(CustomerID);
+            //Check the Customer ID
+            if (ACustomer.SecurityMsg != "ball")
             {
                 OK = false;
             }

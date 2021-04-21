@@ -134,4 +134,16 @@ public partial class CustomerList : System.Web.UI.Page
         RecordCount = DisplayCustomers(txtName.Text);
         lblError.Text = RecordCount + " Record Found";
     }
+
+    protected void btnBackCustomer_Click(object sender, EventArgs e)
+    {
+        //Redirect to the customer page
+        Response.Redirect("MyCustomerAccount.aspx");
+    }
+
+    protected void btnBackStaff_Click(object sender, EventArgs e)
+    {
+        //Redirect to the staff page
+        Response.Redirect("MyStaffAccount.aspx");
+    }
 }
