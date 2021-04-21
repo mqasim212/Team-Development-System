@@ -431,7 +431,7 @@ namespace FlightTesting
             //create a string variable to store the result of the validation
             string Error = "";
             //create some test data to test the method
-            string SomeSecurityMsg = "12345";
+            string SomeSecurityMsg = "12";
             //invoke the method
             Error = ACustomer.Valid(SomeName, SomePhone, SomeEmail, SomeUsername, SomePassword, SomePaymentType, SomeSecurityMsg);
             //Test to see that the result is not ok. i.e there should be an error message
