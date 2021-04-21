@@ -20,13 +20,13 @@
         <asp:Label ID="lblUsername" runat="server" style="z-index: 1; left: 15px; top: 178px; position: absolute" Text="Username"></asp:Label>
         <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1; left: 121px; top: 173px; position: absolute; height: 24px;"></asp:TextBox>
         <asp:Label ID="lblPassword" runat="server" style="z-index: 1; left: 18px; top: 221px; position: absolute" Text="Password"></asp:Label>
-        <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 125px; top: 219px; position: absolute"></asp:TextBox>
-        <asp:Label ID="lblPaymentID" runat="server" style="z-index: 1; left: 17px; top: 270px; position: absolute" Text="PaymentID"></asp:Label>
-        <asp:Label ID="lblPaymentType" runat="server" style="z-index: 1; left: 20px; top: 312px; position: absolute; height: 25px; width: 126px; right: 1367px;" Text="Payment Type"></asp:Label>
-        <asp:TextBox ID="txtPaymentID" runat="server" style="z-index: 1; left: 132px; top: 267px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtPaymentType" runat="server" style="z-index: 1; left: 146px; top: 313px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 125px; top: 218px; position: absolute"></asp:TextBox>
+        <asp:Label ID="lblPaymentType" runat="server" style="z-index: 1; left: 17px; top: 274px; position: absolute; height: 25px; width: 126px; right: 1055px;" Text="Payment Type"></asp:Label>
         <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 27px; top: 419px; position: absolute; width: 80px; height: 41px; right: 738px" Text="OK" OnClick="btnOK_Click" />
         <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 150px; top: 419px; position: absolute; height: 40px; width: 103px" Text="Cancel" OnClick="btnCancel_Click" />
+        <p>
+        <asp:TextBox ID="txtPaymentType" runat="server" style="z-index: 1; left: 147px; top: 273px; position: absolute"></asp:TextBox>
+        </p>
     </form>
 </body>
 </html>

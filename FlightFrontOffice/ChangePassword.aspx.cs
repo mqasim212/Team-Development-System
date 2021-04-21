@@ -36,10 +36,10 @@ public partial class ChangePassword : System.Web.UI.Page
         //change the password and confirm outcome
         lblError.Text = Sec.UserChangePassword(Username, Password1, Password2, SecurityMsg);
         //if there is an error
-        if(lblError.Text=="")
+        if(lblError.Text== "")
         {
             //redirect to account page
-            Response.Redirect("MyCustomerAccount.aspx");
+            Response.Redirect("SignIn.aspx");
         }
         //if there is an error
         else
@@ -55,9 +55,4 @@ public partial class ChangePassword : System.Web.UI.Page
         Response.Redirect("MyCustomerAccount.aspx");
     }
 
-    protected void Return_Click(object sender, EventArgs e)
-    {
-        //redirect to account page
-        Response.Redirect("MyCustomerAccount.aspx");
-    }
 }

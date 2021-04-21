@@ -53,4 +53,10 @@ public partial class MyAccount : System.Web.UI.Page
         //Redirect to the homepage page
         Response.Redirect("HomePage.aspx");
     }
+
+    protected void btnChangePassword_Click(object sender, EventArgs e)
+    {
+        //Redirect to the change password page
+        Response.Redirect("ChangePassword.aspx");
+    }
 }

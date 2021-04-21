@@ -53,7 +53,7 @@ namespace FlightClasses
                 }
                 else
                 {
-                    Error = "There were problems with the sign in";
+                    Error = "There were problems with the sign in.";
                 }
                 return Error;
 
@@ -111,7 +111,7 @@ namespace FlightClasses
                             DB.AddParameter("@Password", HashPassword);
                             DB.AddParameter("@PaymentType", PaymentType);
                             DB.AddParameter("@SecurityMsg", HashSecret);
-                            //executet the stored procedure
+                            //execute the stored proceedure
                             DB.Execute("sproc_tblCustomer_Insert");
                         }
                         //if there was an error
@@ -139,33 +139,39 @@ namespace FlightClasses
                 //return an error message
                 Error = Error + "The customer name cannot have more than 20 characters";
             }
+            
             if (name.Length == 0 | name.Length < 1)
             {
                 //return an error message
                 Error = Error + "The customer name may not be blank";
             }
+
             //if the  Phone Number is more than 11 characters
             if (phone.Length > 11)
             {
                 //return an error message
                 Error = Error + "The Phone Number cannot have more than 11 characters";
             }
+
             if (phone.Length == 0 | phone.Length < 8)
             {
                 //return an error message
                 Error = Error + "The Phone Number may not be blank";
             }
+
             //if the Email is more than 30 characters
             if (email.Length > 30)
             {
                 //return an error message
                 Error = Error + "The email cannot have more than 30 characters";
             }
+
             if (email.Length == 0 | email.Length < 4)
             {
                 //return an error message
                 Error = Error + "The Email may not be blank";
             }
+
             //if the username is more than 15 characters
             if (username.Length > 15)
             {
@@ -177,6 +183,7 @@ namespace FlightClasses
                 //return an error message
                 Error = Error + "The UserName may not be blank";
             }
+
             //if the Password is more than 20 characters
             if (password.Length > 20)
             {
@@ -188,7 +195,7 @@ namespace FlightClasses
                 //return an error message
                 Error = Error + "The Password may not be blank";
             }
-            //if the PaymentID is more than 9 characters
+
           
             //if the PaymentType is more than 15 characters
             if (paymentType.Length > 15)
@@ -201,6 +208,8 @@ namespace FlightClasses
                 //return an error message
                 Error = Error + "The PaymentType may not be blank";
             }
+
+
             //if the secretMsg is more than 20 characters
             if (secretMsg.Length > 20)
             {

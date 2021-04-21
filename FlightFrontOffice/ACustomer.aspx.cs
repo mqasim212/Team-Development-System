@@ -54,7 +54,7 @@ public partial class ACustomer : System.Web.UI.Page
         //create an instance of the Customer Book
         clsCustomerCollection CustomerBook = new clsCustomerCollection();
         //validate the data on the web form
-        String Error = CustomerBook.ThisCustomer.Valid(txtName.Text, txtPhone.Text, txtEmail.Text, txtUsername.Text, txtPassword.Text, txtPaymentID.Text, txtPaymentType.Text);
+        String Error = CustomerBook.ThisCustomer.Valid(txtName.Text, txtPhone.Text, txtEmail.Text, txtUsername.Text, txtPassword.Text, txtPaymentType.Text);
         //if the data is ok then add it to the object
         if (Error == "")
         {
@@ -64,7 +64,6 @@ public partial class ACustomer : System.Web.UI.Page
             CustomerBook.ThisCustomer.Email = txtEmail.Text;
             CustomerBook.ThisCustomer.Username = txtUsername.Text;
             CustomerBook.ThisCustomer.Password = txtPassword.Text;
-            CustomerBook.ThisCustomer.PaymentID = txtPaymentID.Text;
             CustomerBook.ThisCustomer.PaymentType = txtPaymentType.Text;
             //add the record
             CustomerBook.Add();
@@ -84,7 +83,7 @@ public partial class ACustomer : System.Web.UI.Page
         //create an instance of the Customer Book
         clsCustomerCollection CustomerBook = new clsCustomerCollection();
         //validate the data on the web form
-        String Error = CustomerBook.ThisCustomer.Valid(txtName.Text, txtPhone.Text, txtEmail.Text, txtUsername.Text, txtPassword.Text, txtPaymentID.Text, txtPaymentType.Text);
+        String Error = CustomerBook.ThisCustomer.Valid(txtName.Text, txtPhone.Text, txtEmail.Text, txtUsername.Text, txtPassword.Text, txtPaymentType.Text);
         //if the data is ok then add it to the object
         if (Error == "")
         {
@@ -96,7 +95,6 @@ public partial class ACustomer : System.Web.UI.Page
             CustomerBook.ThisCustomer.Email = txtEmail.Text;
             CustomerBook.ThisCustomer.Username = txtUsername.Text;
             CustomerBook.ThisCustomer.Password = txtPassword.Text;
-            CustomerBook.ThisCustomer.PaymentID = txtPaymentID.Text;
             CustomerBook.ThisCustomer.PaymentType = txtPaymentType.Text;
             //update the record
             CustomerBook.Update();
@@ -122,7 +120,6 @@ public partial class ACustomer : System.Web.UI.Page
         txtEmail.Text = CustomerBook.ThisCustomer.Email;
         txtUsername.Text = CustomerBook.ThisCustomer.Username;
         txtPassword.Text = CustomerBook.ThisCustomer.Password;
-        txtPaymentID.Text = CustomerBook.ThisCustomer.PaymentID;
         txtPaymentType.Text = CustomerBook.ThisCustomer.PaymentType;
     }
 

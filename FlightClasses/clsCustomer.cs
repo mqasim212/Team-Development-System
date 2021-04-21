@@ -19,10 +19,10 @@ namespace FlightClasses
         private string mUsername;
         //private data member for the Password property
         private string mPassword;
-        //private data member for the PaymentID property
-        private string mPaymentID;
         //private data member for the PaymentType property
         private string mPaymentType;
+        //private data member for the securityMsg
+        private string mSecurityMsg;
 
         public bool Find(int CustomerID)
         {
@@ -42,8 +42,8 @@ namespace FlightClasses
                 mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
                 mUsername = Convert.ToString(DB.DataTable.Rows[0]["Username"]);
                 mPassword = Convert.ToString(DB.DataTable.Rows[0]["Password"]);
-                mPaymentID = Convert.ToString(DB.DataTable.Rows[0]["PaymentID"]);
                 mPaymentType = Convert.ToString(DB.DataTable.Rows[0]["PaymentType"]);
+                mSecurityMsg = Convert.ToString(DB.DataTable.Rows[0]["SecurityMsg"]);
                 //return that everything worked ok
                 return true;
             }
@@ -55,85 +55,11 @@ namespace FlightClasses
             }
         }
 
-
-
-
-        public string Valid(string someName, string somePhone, string someEmail, string someUsername, string somePassword, string somePaymentID, string somePaymentType)
+        public string Valid(string text1, string text2, string text3, string text4, string text5, string text6)
         {
-            //string variable to store the error message
-            string Error = "";
-
-            //if the name of the customer is more than 20 characters
-            if (someName.Length > 20)
-            {
-                //return an error message
-                Error = Error + "The customer name cannot have more than 20 characters";
-            }
-            if (someName.Length == 0 | someName.Length < 1)
-            {
-                //return an error message
-                Error = Error + "The customer name may not be blank";
-            }
-            //if the  Phone Number is more than 11 characters
-            if (somePhone.Length > 11)
-            {
-                //return an error message
-                Error = Error + "The Phone Number cannot have more than 11 characters";
-            }
-            if (somePhone.Length == 0 | somePhone.Length <8)
-            {
-                //return an error message
-                Error = Error + "The Phone Number may not be blank";
-            }
-            //if the Email is more than 30 characters
-            if (someEmail.Length > 30)
-            {
-                //return an error message
-                Error = Error + "The email cannot have more than 30 characters";
-            }
-            if (someEmail.Length == 0 | someEmail.Length < 4)
-            {
-                //return an error message
-                Error = Error + "The Email may not be blank";
-            }
-            //if the username is more than 15 characters
-            if (someUsername.Length > 15)
-            {
-                //return an error message
-                Error = Error + "The UserName cannot have more than 15 characters";
-            }
-            if (someUsername.Length == 0 | someUsername.Length < 5)
-            {
-                //return an error message
-                Error = Error + "The UserName may not be blank";
-            }
-            //if the Password is more than 20 characters
-            if (somePassword.Length > 20)
-            {
-                //return an error message
-                Error = Error + "The Password cannot have more than 20 characters";
-            }
-            if (somePassword.Length == 0 | somePassword.Length < 6)
-            {
-                //return an error message
-                Error = Error + "The Password may not be blank";
-            }
-            
-            //if the PaymentType is more than 15 characters
-            if (somePaymentType.Length > 15)
-            {
-                //return an error message
-                Error = Error + "The PaymentType cannot have more than 15 characters";
-            }
-            if (somePaymentType.Length == 0 | somePaymentType.Length < 10)
-            {
-                //return an error message
-                Error = Error + "The PaymentType may not be blank";
-            }
-
-
-            return Error;
+            return "";
         }
+
 
         //public property for the customerID
         public int CustomerID
@@ -225,20 +151,6 @@ namespace FlightClasses
             }
         }
 
-        //public property for the paymentID
-        public string PaymentID
-        {
-            get
-            {
-                //return the private data
-                return mPaymentID;
-            }
-            set
-            {
-                //set the value of the private data member
-                mPaymentID = value;
-            }
-        }
 
         //public property for the payment tYPE
         public string PaymentType
@@ -254,5 +166,109 @@ namespace FlightClasses
                 mPaymentType = value;
             }
         }
+
+        //public property for the SecurityMsg
+        public string SecurityMsg
+        {
+            get
+            {
+                //return the private data
+                return mSecurityMsg;
+            }
+            set
+            {
+                //set the value of the private data member
+                mSecurityMsg = value;
+            }
+        }
+
+        public string Valid(string someName, string somePhone, string someEmail, string someUsername, string somePassword, string somePaymentType, string someSecurityMsg)
+        {
+            //string variable to store the error message
+            string Error = "";
+
+            //if the name of the customer is more than 20 characters
+            if (someName.Length > 20)
+            {
+                //return an error message
+                Error = Error + "The customer name cannot have more than 20 characters";
+            }
+            if (someName.Length == 0 | someName.Length < 1)
+            {
+                //return an error message
+                Error = Error + "The customer name may not be blank";
+            }
+            //if the  Phone Number is more than 11 characters
+            if (somePhone.Length > 11)
+            {
+                //return an error message
+                Error = Error + "The Phone Number cannot have more than 11 characters";
+            }
+            if (somePhone.Length == 0 | somePhone.Length < 8)
+            {
+                //return an error message
+                Error = Error + "The Phone Number may not be blank";
+            }
+            //if the Email is more than 30 characters
+            if (someEmail.Length > 30)
+            {
+                //return an error message
+                Error = Error + "The email cannot have more than 30 characters";
+            }
+            if (someEmail.Length == 0 | someEmail.Length < 4)
+            {
+                //return an error message
+                Error = Error + "The Email may not be blank";
+            }
+            //if the username is more than 15 characters
+            if (someUsername.Length > 15)
+            {
+                //return an error message
+                Error = Error + "The UserName cannot have more than 15 characters";
+            }
+            if (someUsername.Length == 0 | someUsername.Length < 5)
+            {
+                //return an error message
+                Error = Error + "The UserName may not be blank";
+            }
+            //if the Password is more than 20 characters
+            if (somePassword.Length > 20)
+            {
+                //return an error message
+                Error = Error + "The Password cannot have more than 20 characters";
+            }
+            if (somePassword.Length == 0 | somePassword.Length < 6)
+            {
+                //return an error message
+                Error = Error + "The Password may not be blank";
+            }
+
+            //if the PaymentType is more than 15 characters
+            if (somePaymentType.Length > 15)
+            {
+                //return an error message
+                Error = Error + "The PaymentType cannot have more than 15 characters";
+            }
+            if (somePaymentType.Length == 0 | somePaymentType.Length < 10)
+            {
+                //return an error message
+                Error = Error + "The PaymentType may not be blank";
+            }
+            //if the secretMsg is more than 20 characters
+            if (someSecurityMsg.Length > 20)
+            {
+                //return an error message
+                Error = Error + "The secretMsg cannot have more than 20 characters";
+            }
+            if (someSecurityMsg.Length == 0 | someSecurityMsg.Length < 3)
+            {
+                //return an error message
+                Error = Error + "The secretMsg may not be blank";
+            }
+
+
+            return Error;
+        }
     }
 }
+

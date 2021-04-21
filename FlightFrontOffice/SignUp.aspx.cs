@@ -45,22 +45,9 @@ public partial class SignUp : System.Web.UI.Page
         Session["Sec"] = Sec;
     }
 
-    protected void btnDone_Click(object sender, EventArgs e)
+    protected void btnCancel_Click(object sender, EventArgs e)
     {
-        //if done redirect to main page
-        Response.Redirect("MyCustomerAccount.aspx");
-    }
-
-    protected void btnView_Click(object sender, EventArgs e)
-    {
-        //view the email
-        Response.Redirect("EMailViewer.aspx");
-    }
-
-    protected void btnReSend_Click(object sender, EventArgs e)
-    {
-
-        //display re-set password form
-        Response.Redirect("ReSet.aspx");
+        //redirect back to the homepage
+        Response.Redirect("HomePage.aspx");
     }
 }

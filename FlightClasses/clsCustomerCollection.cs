@@ -80,8 +80,8 @@ namespace FlightClasses
             DB.AddParameter("@Email", mThisCustomer.Email);
             DB.AddParameter("@Username", mThisCustomer.Username);
             DB.AddParameter("@Password", mThisCustomer.Password);
-            DB.AddParameter("@PaymentID", mThisCustomer.PaymentID);
             DB.AddParameter("@PaymentType", mThisCustomer.PaymentType);
+            DB.AddParameter("@SecurityMsg", mThisCustomer.SecurityMsg);
             //execute the query returning the primary key value
             return DB.Execute("sproc_tblCustomer_Insert");
         }
@@ -108,9 +108,9 @@ namespace FlightClasses
             DB.AddParameter("@Phone", mThisCustomer.Phone);
             DB.AddParameter("@Email", mThisCustomer.Email);
             DB.AddParameter("@Username", mThisCustomer.Username);
-            DB.AddParameter("@Password", mThisCustomer.Password);
-            DB.AddParameter("@PaymentID", mThisCustomer.PaymentID);
+            DB.AddParameter("@Password", mThisCustomer.Password);      
             DB.AddParameter("@PaymentType", mThisCustomer.PaymentType);
+            DB.AddParameter("@SecurityMsg", mThisCustomer.SecurityMsg);
             //execute the query returning the primary key value
             DB.Execute("sproc_tblCustomer_Update");
         }
@@ -150,8 +150,8 @@ namespace FlightClasses
                 ACustomer.Email = Convert.ToString(DB.DataTable.Rows[Index]["Email"]);
                 ACustomer.Username = Convert.ToString(DB.DataTable.Rows[Index]["Username"]);
                 ACustomer.Password = Convert.ToString(DB.DataTable.Rows[Index]["Password"]);
-                ACustomer.PaymentID = Convert.ToString(DB.DataTable.Rows[Index]["PaymentID"]);
                 ACustomer.PaymentType = Convert.ToString(DB.DataTable.Rows[Index]["PaymentType"]);
+                ACustomer.SecurityMsg = Convert.ToString(DB.DataTable.Rows[Index]["SecurityMsg"]);
                 //add the record to the private data member
                 mCustomerList.Add(ACustomer);
                 //point at the next record
