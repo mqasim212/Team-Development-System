@@ -8,6 +8,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FlightFrontOffice", "FlightFrontOffice\", "{29E40E5D-1374-43D6-8257-A010E1B9BAF6}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{4a302ef4-e441-4b6e-8083-169d87b9e122}|FlightClasses.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_53693"
 		Debug.AspNetCompiler.PhysicalPath = "FlightFrontOffice\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53693\"
