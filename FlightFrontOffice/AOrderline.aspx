@@ -11,7 +11,7 @@
         <div>
         </div>
         <asp:Label ID="lblBookingNo" runat="server" style="z-index: 1; left: 23px; top: 53px; position: absolute" Text="Booking Number"></asp:Label>
-        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 166px; top: 249px; position: absolute; height: 38px; width: 100px" Text="Cancel" />
+        <asp:Button ID="btnCancel" runat="server" style="z-index: 1; left: 166px; top: 249px; position: absolute; height: 38px; width: 100px" Text="Cancel" OnClick="btnCancel_Click" />
         <asp:TextBox ID="txtBookingNo" runat="server" style="z-index: 1; left: 183px; top: 53px; position: absolute"></asp:TextBox>
         <asp:Label ID="lblQuantity" runat="server" style="z-index: 1; left: 28px; top: 109px; position: absolute" Text="Quantity"></asp:Label>
         <asp:TextBox ID="txtQuantity" runat="server" style="z-index: 1; left: 158px; top: 110px; position: absolute"></asp:TextBox>

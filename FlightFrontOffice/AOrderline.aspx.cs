@@ -110,4 +110,10 @@ public partial class AOrderline : System.Web.UI.Page
         txtBookingNo.Text = OrderlineBook.ThisOrderline.BookingNo;
         txtQuantity.Text = OrderlineBook.ThisOrderline.Quantity.ToString();
     }
+
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        //all done so redirect back to the main page
+        Response.Redirect("OrderlineList.aspx");
+    }
 }

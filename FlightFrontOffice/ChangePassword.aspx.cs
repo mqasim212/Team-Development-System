@@ -52,7 +52,7 @@ public partial class ChangePassword : System.Web.UI.Page
     protected void btnCancel_Click(object sender, EventArgs e)
     {
         //redirect to account page
-        Response.Redirect("MyCustomerAccount.aspx");
+        Response.Redirect("SignIn.aspx");
     }
 
 }

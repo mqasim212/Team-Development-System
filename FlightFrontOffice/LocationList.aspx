@@ -22,7 +22,7 @@
         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Overline="False" Font-Size="Large" style="z-index: 1; left: 505px; top: 43px; position: absolute" Text="Country of Departure / Airport of Destination"></asp:Label>
         <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="XX-Large" Font-Underline="True" style="z-index: 1; left: 64px; top: 55px; position: absolute; height: 48px; width: 269px; margin-right: 60px;" Text="Location Page"></asp:Label>
         <asp:Button ID="btnBackCustomer" runat="server" OnClick="btnBackCustomer_Click" style="z-index: 1; left: 48px; top: 439px; position: absolute; height: 48px; width: 146px" Text="Back (Customer)" />
-        <asp:Button ID="btnBackStaff" runat="server" style="z-index: 1; left: 47px; top: 509px; position: absolute; height: 45px; width: 146px" Text="Back (Staff)" OnClick="btnBackStaff_Click" />
+        <asp:Button ID="btnBackStaff" runat="server" style="z-index: 1; left: 47px; top: 509px; position: absolute; height: 48px; width: 146px" Text="Back (Staff)" OnClick="btnBackStaff_Click" />
     </form>
 </body>
 </html>

@@ -11,7 +11,7 @@
         <div>
         </div>
         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="XX-Large" style="z-index: 1; left: 254px; top: 29px; position: absolute" Text="Welcome to Qasim's Flight Booking Website"></asp:Label>
-        <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="XX-Large" style="z-index: 1; left: 430px; top: 118px; position: absolute" Text="My Account (Staff)"></asp:Label>
+        <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="XX-Large" style="z-index: 1; left: 430px; top: 118px; position: absolute" Text="My Account (Staff)" Font-Underline="True"></asp:Label>
         <asp:Button ID="btnManageStaffAccounts" runat="server" OnClick="btnManageStaffAccounts_Click" style="z-index: 1; left: 20px; top: 251px; position: absolute; height: 58px; width: 182px" Text="Manage Staff Accounts" />
         <p>
             &nbsp;</p>
